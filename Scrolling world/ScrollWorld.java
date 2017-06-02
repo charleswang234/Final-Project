@@ -74,15 +74,15 @@ public abstract class ScrollWorld extends World
         objects = new ArrayList<ScrollActor>(); //initializes array of scrolling actors
         camFollowers = new ArrayList<ScrollActor>(); //initializes array of scrolling actors
         
-        camX = getWidth() /2;
+        camX = getWidth() /2; 
         camY = getHeight() /2;
         camDir = 0;
         
         scrollPosX = 0;
         scrollPosY = 0;
         
-        bigBackground = new GreenfootImage(width+width, height+height);
-        setNewBackground(back);
+        bigBackground = new GreenfootImage(width+width, height+height); // Create an empty (transparent) image with the specified size.
+        setNewBackground(back); 
     }
     
     /** EXTRA METHODS: */
@@ -94,21 +94,21 @@ public abstract class ScrollWorld extends World
      */
     public void setNewBackground(GreenfootImage background)
     {
-        bigBackground.clear();
-        if (background.getWidth() == bigBackground.getWidth() &&
-            background.getHeight() == bigBackground.getHeight()) {
-            bigBackground.drawImage(background, 0,0);
+        bigBackground.clear(); //clears the image
+        if (background.getWidth() == bigBackground.getWidth() && 
+            background.getHeight() == bigBackground.getHeight()) { //usually does not run through this code
+            bigBackground.drawImage(background, 0,0); //draws background
             back.clear();
             back.drawImage(bigBackground, scrollPosX,scrollPosY);
             return;
         }
         
-        bigBackground.drawImage(background, 0,0);
-        bigBackground.drawImage(background, background.getWidth(),0);
-        bigBackground.drawImage(background, 0,background.getHeight());
-        bigBackground.drawImage(background, background.getWidth(),background.getHeight());
+        bigBackground.drawImage(background, 0,0); //makes it so that the background does not blur, top right
+        bigBackground.drawImage(background, background.getWidth(),0); //top left
+        bigBackground.drawImage(background, 0,background.getHeight()); //bottom left corner
+        bigBackground.drawImage(background, background.getWidth(),background.getHeight()); //bottom right
         
-        back.clear();
+        back.clear(); //clears previous 
         back.drawImage(bigBackground, scrollPosX,scrollPosY);
     }
     
