@@ -27,7 +27,6 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        practice practice = new practice();
-        addObject(practice,334,198);
+     
     }
 }
