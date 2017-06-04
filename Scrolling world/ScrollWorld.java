@@ -62,12 +62,12 @@ public abstract class ScrollWorld extends World
         this.width = back.getWidth(); //returns width of the image, practically the screen size
         this.height = back.getHeight(); //returns height of the image, , practically the screen size
         this.cellSize = cellSize;   //the size of the cells
-        this.fullWidth = fullWidth; //The total width of the world, the actual width even including the offscreen
+        this.fullWidth = fullWidth; //The totaxl width of the world, the actual width even including the offscreen
         this.fullHeight = fullHeight; //The total height of the world, the actual width even including the offscreen
-        if (fullWidth <= 0)
+        if (fullWidth <= width)
             throw new IllegalArgumentException("The width of the big space ("+fullWidth
             +") can't be smaller then the width of the world ("+width+")");
-        if (fullHeight <= 0)
+        if (fullHeight <= height)
             throw new IllegalArgumentException("The height of the big space ("+fullHeight
             +") can't be smaller then the height of the world ("+height+")");
         
