@@ -103,13 +103,13 @@ public abstract class ScrollActor extends Actor
     public void setLocation(int x, int y)
     {
         if (world == null) return;
-        super.setLocation(x,y);
-        int halfWorldWidth = world.getWidth() /2;
-        int halfWorldHeight = world.getHeight() /2;
-        camX = x -halfWorldWidth;
+        super.setLocation(x,y); //sets location of the actor
+        int halfWorldWidth = world.getWidth() /2; //half the x value of the screen (not the entire world)
+        int halfWorldHeight = world.getHeight() /2; //half the y vlaue of the screen
+        camX = x -halfWorldWidth; 
         camY = y -halfWorldHeight;
-        globalX = x +(world.getCameraX() -halfWorldWidth);
-        globalY = y +(world.getCameraY() -halfWorldHeight);
+        globalX = x +(world.getCameraX() -halfWorldWidth); //() part does not do much because add/substracts same amount
+        globalY = y +(world.getCameraY() -halfWorldHeight);//() part does not do much because add/substracts same amount
     }
     
     /**
