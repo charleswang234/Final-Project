@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class main extends Actor
 {
+    
+    //game character is 30 X 30 and every block is 30 by  
+    
     private int speedUpDown = 0; //IN PROGRESS
     private boolean fall = false; //IN PROGRESS
     private int speedRight = 5; //speed of moving right
@@ -25,7 +28,7 @@ public class main extends Actor
         copy();
         objectCollision();
         move();
-        //fall(); //IN PROGRESS
+        fall(); //IN PROGRESS
         setLocation(changeX, changeY);
     }    
 
@@ -46,25 +49,30 @@ public class main extends Actor
      */
     private void objectCollision(){
         Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
+        Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
+        if (blocksUpDown != null){
+            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
+                fall = false;
+                changeY = blocksUpDown.getY() - 29;
+            }
+        }else{
+            fall = true;
+        }
 
         if (blocksLeftRight != null){
-            if (getX() + 24 < blocksLeftRight.getX()) {
+            if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 > blocksLeftRight.getY() && changeY - 28 < blocksLeftRight.getY()){
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
 
-            }else if (getX() - 24 > blocksLeftRight.getX()){
+            }else if (changeX - 24 > blocksLeftRight.getX() && changeY + 28 > blocksLeftRight.getY() && changeY - 28 < blocksLeftRight.getY()){
                 speedLeft = 0;
                 changeX = blocksLeftRight.getX() + 29;
+            }else{
+                speedRight = 5;
+                speedLeft = -5;
             }
-        }else{
-            speedRight = 5;
-            speedLeft = -5;
         }
 
-        Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
-        if (blocksUpDown != null){
-
-        }
     }
 
     /**
