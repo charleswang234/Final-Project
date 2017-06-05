@@ -48,7 +48,7 @@ public class main extends Actor
         Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
 
         if (blocksLeftRight != null){
-            if (getX() + 24 < blocksLeftRight.getX()){
+            if (getX() + 24 < blocksLeftRight.getX()) {
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
 
@@ -63,7 +63,7 @@ public class main extends Actor
 
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
         if (blocksUpDown != null){
-            
+
         }
     }
 
