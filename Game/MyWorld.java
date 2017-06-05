@@ -120,5 +120,7 @@ public class MyWorld extends World
         addObject(blueblock29,500,230);
         blueBlock blueblock30 = new blueBlock();
         addObject(blueblock30,245,231);
+        blueBlock blueblock31 = new blueBlock();
+        addObject(blueblock31,362,578);
     }
 }
