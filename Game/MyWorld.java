@@ -120,5 +120,21 @@ public class MyWorld extends World
         addObject(blueblock29,500,230);
         blueBlock blueblock30 = new blueBlock();
         addObject(blueblock30,245,231);
+        blueBlock blueblock31 = new blueBlock();
+        addObject(blueblock31,362,578);
+        blueBlock blueblock32 = new blueBlock();
+        addObject(blueblock32,334,344);
+        blueBlock blueblock33 = new blueBlock();
+        addObject(blueblock33,380,346);
+        blueBlock blueblock34 = new blueBlock();
+        addObject(blueblock34,428,346);
+
+        blueBlock blueblock35 = new blueBlock();
+        addObject(blueblock35,281,395);
+        blueBlock blueblock36 = new blueBlock();
+        addObject(blueblock36,211,356);
+        blueBlock blueblock37 = new blueBlock();
+        addObject(blueblock37,463,326);
+        blueblock32.setLocation(350,347);
     }
 }

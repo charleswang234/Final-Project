@@ -8,11 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class main extends Actor
 {
-    private int speedRight = 5;
-    private int speedLeft = -5;
-    private int changeX;
-    private int changeY;
-    
+    private int speedUpDown = 0; //IN PROGRESS
+    private boolean fall = false; //IN PROGRESS
+    private int speedRight = 5; //speed of moving right
+    private int speedLeft = -5; //speed of moving left
+    private int changeX; //changing getX() indirectly first
+    private int changeY; //changing getY() indirectly first
+    private boolean touchingBlock = false; //checks if touching block from top so main character can jump
+
     /**
      * Act - do whatever the main wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,7 +25,7 @@ public class main extends Actor
         copy();
         objectCollision();
         move();
-        
+        //fall(); //IN PROGRESS
         setLocation(changeX, changeY);
     }    
 
@@ -42,29 +45,51 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        Actor blocks = getOneIntersectingObject(blueBlock.class);
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
 
-        if (blocks != null){
-
-            if (getX() + 24 < blocks.getX()){
+        if (blocksLeftRight != null){
+            if (getX() + 24 < blocksLeftRight.getX()){
                 speedRight = 0;
-                changeX = blocks.getX() - 29;
-                
-            }else if (getX() - 24 > blocks.getX()){
+                changeX = blocksLeftRight.getX() - 29;
+
+            }else if (getX() - 24 > blocksLeftRight.getX()){
                 speedLeft = 0;
-                changeX = blocks.getX() + 29;
+                changeX = blocksLeftRight.getX() + 29;
             }
         }else{
             speedRight = 5;
             speedLeft = -5;
         }
 
+        Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
+        if (blocksUpDown != null){
+            
+        }
     }
-    
+
+    /**
+     * Method to change the coordinates of the main character indirectly
+     * and then apply it directly at the very end of act
+     */
     private void copy(){
         changeX = getX();
         changeY = getY();
     }
+
+    /**
+     * Falling method  IN PROGRESS
+     */
+    private void fall(){ 
+        if (fall){
+            if (speedUpDown <= 10 ){
+                speedUpDown++; 
+            }
+        }else if (!fall) {
+            speedUpDown = 0;
+        }
+        changeY += speedUpDown;
+    }
+
     /**
      * create jump and jump delay nd can only jump when on the block
      * touching the block, unable to moving certain areas
