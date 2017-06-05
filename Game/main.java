@@ -10,10 +10,11 @@ public class main extends Actor
 {
     private int speedUpDown = 0; //IN PROGRESS
     private boolean fall = false; //IN PROGRESS
-    private int speedRight = 5;
-    private int speedLeft = -5;
-    private int changeX;
-    private int changeY;
+    private int speedRight = 5; //speed of moving right
+    private int speedLeft = -5; //speed of moving left
+    private int changeX; //changing getX() indirectly first
+    private int changeY; //changing getY() indirectly first
+    private boolean touchingBlock = false; //checks if touching block from top so main character can jump
 
     /**
      * Act - do whatever the main wants to do. This method is called whenever
@@ -44,28 +45,26 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        Actor blocks = getOneIntersectingObject(blueBlock.class);
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
 
-        if (blocks != null){
-            //fall = false; //testing IN PROGRESS
-            if (getX() + 24 < blocks.getX()){
+        if (blocksLeftRight != null){
+            if (getX() + 24 < blocksLeftRight.getX()){
                 speedRight = 0;
-                changeX = blocks.getX() - 29;
+                changeX = blocksLeftRight.getX() - 29;
 
-            }else if (getX() - 24 > blocks.getX()){
+            }else if (getX() - 24 > blocksLeftRight.getX()){
                 speedLeft = 0;
-                changeX = blocks.getX() + 29;
-            }else if (speedLeft == 10){
-
-            }else if (speedLeft == 10){
-
+                changeX = blocksLeftRight.getX() + 29;
             }
         }else{
-            //fall = true; //testing IN PROGRESS
             speedRight = 5;
             speedLeft = -5;
         }
 
+        Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
+        if (blocksUpDown != null){
+            
+        }
     }
 
     /**
@@ -81,7 +80,6 @@ public class main extends Actor
      * Falling method  IN PROGRESS
      */
     private void fall(){ 
-        int count = 0;
         if (fall){
             if (speedUpDown <= 10 ){
                 speedUpDown++; 
