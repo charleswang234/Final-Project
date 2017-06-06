@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Jun 06 15:51:07 EDT 2017
+#Tue Jun 06 17:22:41 EDT 2017
 readme.name=@README
 target2.name=blueBlock
 simulation.speed=49
@@ -13,8 +13,8 @@ target1.type=ClassTarget
 class.MyWorld.superclass=greenfoot.World
 target3.type=ClassTarget
 target2.y=10
-target2.x=160
 package.numTargets=3
+target2.x=160
 dependency3.to=blueBlock
 target1.height=50
 dependency2.type=UsesDependency
@@ -27,14 +27,16 @@ target1.showInterface=false
 target3.typeParameters=
 target1.name=main
 class.MyWorld.image=green background.jpg
-target3.name=MyWorld
 target2.typeParameters=
 readme.y=10
+target3.name=MyWorld
+class.blueBlock2.superclass=greenfoot.Actor
 readme.x=10
 mainWindow.width=1932
 target1.typeParameters=
 dependency2.from=MyWorld
 target2.width=80
+class.blueBlock2.image=blue block.jpg
 mainWindow.y=-9
 target1.width=80
 mainWindow.height=1060

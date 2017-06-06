@@ -51,7 +51,7 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
         if (blocksUpDown != null){
             if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 19 < blocksUpDown.getY()){
@@ -68,7 +68,6 @@ public class main extends Actor
             if (changeX + 23 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
-
             }else if (changeX - 23 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedLeft = 0;
                 changeX = blocksLeftRight.getX() + 29;
@@ -80,7 +79,6 @@ public class main extends Actor
             speedRight = 5;
             speedLeft = -5;
         }
-
     }
 
     /**
