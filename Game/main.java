@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class main extends Actor
 {
-    
+
     //game character is 30 X 30 and every block is 30 by  
-    
+
     private int speedUpDown = 0; //IN PROGRESS
     private boolean fall = false; //IN PROGRESS
     private int speedRight = 5; //speed of moving right
@@ -26,9 +26,10 @@ public class main extends Actor
     public void act() 
     {
         copy();
+
         objectCollision();
         move();
-        fall(); //IN PROGRESS
+        fall(); //IN PROGRESS   
         setLocation(changeX, changeY);
     }    
 
@@ -51,7 +52,7 @@ public class main extends Actor
         Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
         if (blocksUpDown != null){
-            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
+            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 19 < blocksUpDown.getY()){
                 fall = false;
                 changeY = blocksUpDown.getY() - 29;
             }
@@ -60,11 +61,11 @@ public class main extends Actor
         }
 
         if (blocksLeftRight != null){
-            if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 > blocksLeftRight.getY() && changeY - 28 < blocksLeftRight.getY()){
+            if (changeX + 23 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
 
-            }else if (changeX - 24 > blocksLeftRight.getX() && changeY + 28 > blocksLeftRight.getY() && changeY - 28 < blocksLeftRight.getY()){
+            }else if (changeX - 23 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedLeft = 0;
                 changeX = blocksLeftRight.getX() + 29;
             }else{
@@ -89,10 +90,10 @@ public class main extends Actor
      */
     private void fall(){ 
         if (fall){
-            if (speedUpDown <= 10 ){
+            if (speedUpDown < 10 ){
                 speedUpDown++; 
             }
-        }else if (!fall) {
+        }else {
             speedUpDown = 0;
         }
         changeY += speedUpDown;
