@@ -116,18 +116,7 @@ public class MyWorld extends World
         addObject(main,409,210);
         main.setLocation(360,231);
 
-        main main2 = new main();
-        addObject(main2,494,253);
-        main main3 = new main();
-        addObject(main3,642,194);
-        main main4 = new main();
-        addObject(main4,683,244);
-        main main5 = new main();
-        addObject(main5,302,187);
-        main main6 = new main();
-        addObject(main6,172,261);
         blueBlock blueblock29 = new blueBlock();
-        addObject(blueblock29,581,393);
-        blueblock29.setLocation(585,385);
+        addObject(blueblock29,705,385);
     }
 }
