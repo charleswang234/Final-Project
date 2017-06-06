@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Jun 06 12:31:10 EDT 2017
+#Tue Jun 06 15:51:07 EDT 2017
 readme.name=@README
 target2.name=blueBlock
 simulation.speed=49
@@ -31,7 +31,7 @@ target3.name=MyWorld
 target2.typeParameters=
 readme.y=10
 readme.x=10
-mainWindow.width=1938
+mainWindow.width=1932
 target1.typeParameters=
 dependency2.from=MyWorld
 target2.width=80
