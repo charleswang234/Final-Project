@@ -17,7 +17,6 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(840, 600, 1, true); 
-
         prepare();
     }
 
@@ -27,7 +26,6 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-
         blueBlock blueblock1 = new blueBlock();
         addObject(blueblock1,15,405);
 
@@ -111,16 +109,36 @@ public class MyWorld extends World
 
         blueBlock blueblock28 = new blueBlock();
         addObject(blueblock28,825,405);
+        
+        blueBlock blueblock29 = new blueBlock();
+        addObject(blueblock29,705,375);
+        
+        blueBlock2 blueblock31 = new blueBlock2();
+        addObject(blueblock31,705,375);
+        
+        startPipe pipe1 = new startPipe();
+        addObject(pipe1,135,135);
+
+        endPipe pipe2 = new endPipe();
+        addObject(pipe2,795,405);
+        
+        botSpike spike1 = new botSpike();
+        addObject(spike1,135,435);
+
+        botSpike spike2 = new botSpike();
+        addObject(spike2,165,435);
+
+        botSpike spike3 = new botSpike();
+        addObject(spike3,195,435);
+
+        botSpike spike4 = new botSpike();
+        addObject(spike4,225,435);
+
+        doorUnlock button = new doorUnlock();
+        addObject(button,435,195);
 
         main main = new main();
         addObject(main,409,210);
         main.setLocation(360,231);
-
-        blueBlock blueblock29 = new blueBlock();
-        addObject(blueblock29,705,375);
-        blueBlock2 blueblock31 = new blueBlock2();
-        addObject(blueblock31,705,375);
-        blueBlock blueblock30 = new blueBlock();
-        addObject(blueblock30,75,375);
     }
 }
