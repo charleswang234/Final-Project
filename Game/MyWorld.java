@@ -29,105 +29,96 @@ public class MyWorld extends World
     {
 
         blueBlock blueblock1 = new blueBlock();
-        addObject(blueblock1,15,415);
+        addObject(blueblock1,15,405);
 
         blueBlock blueblock2 = new blueBlock();
-        addObject(blueblock2,45,415);
+        addObject(blueblock2,45,405);
 
         blueBlock blueblock3 = new blueBlock();
-        addObject(blueblock3,75,415);
+        addObject(blueblock3,75,405);
 
         blueBlock blueblock4 = new blueBlock();
-        addObject(blueblock4,105,415);
+        addObject(blueblock4,105,405);
 
         blueBlock blueblock5 = new blueBlock();
-        addObject(blueblock5,135,415);
+        addObject(blueblock5,135,405);
 
         blueBlock blueblock6 = new blueBlock();
-        addObject(blueblock6,165,415);
+        addObject(blueblock6,165,405);
 
         blueBlock blueblock7 = new blueBlock();
-        addObject(blueblock7,195,415);
+        addObject(blueblock7,195,405);
 
         blueBlock blueblock8 = new blueBlock();
-        addObject(blueblock8,225,415);
+        addObject(blueblock8,225,405);
 
         blueBlock blueblock9 = new blueBlock();
-        addObject(blueblock9,255,415);
+        addObject(blueblock9,255,405);
 
         blueBlock blueblock10 = new blueBlock();
-        addObject(blueblock10,285,415);
+        addObject(blueblock10,285,405);
 
         blueBlock blueblock11 = new blueBlock();
-        addObject(blueblock11,315,415);
+        addObject(blueblock11,315,405);
 
         blueBlock blueblock12 = new blueBlock();
-        addObject(blueblock12,345,415);
+        addObject(blueblock12,345,405);
 
         blueBlock blueblock13 = new blueBlock();
-        addObject(blueblock13,375,415);
+        addObject(blueblock13,375,405);
 
         blueBlock blueblock14 = new blueBlock();
-        addObject(blueblock14,405,415);
+        addObject(blueblock14,405,405);
 
         blueBlock blueblock15 = new blueBlock();
-        addObject(blueblock15,435,415);
+        addObject(blueblock15,435,405);
 
         blueBlock blueblock16 = new blueBlock();
-        addObject(blueblock16,465,415);
+        addObject(blueblock16,465,405);
 
         blueBlock blueblock17 = new blueBlock();
-        addObject(blueblock17,495,415);
+        addObject(blueblock17,495,405);
 
         blueBlock blueblock18 = new blueBlock();
-        addObject(blueblock18,525,415);
+        addObject(blueblock18,525,405);
 
         blueBlock blueblock19 = new blueBlock();
-        addObject(blueblock19,555,415);
+        addObject(blueblock19,555,405);
 
         blueBlock blueblock20 = new blueBlock();
-        addObject(blueblock20,585,415);
+        addObject(blueblock20,585,405);
 
         blueBlock blueblock21 = new blueBlock();
-        addObject(blueblock21,615,415);
+        addObject(blueblock21,615,405);
 
         blueBlock blueblock22 = new blueBlock();
-        addObject(blueblock22,645,415);
+        addObject(blueblock22,645,405);
 
         blueBlock blueblock23 = new blueBlock();
-        addObject(blueblock23,675,415);
+        addObject(blueblock23,675,405);
 
         blueBlock blueblock24 = new blueBlock();
-        addObject(blueblock24,705,415);
+        addObject(blueblock24,705,405);
 
         blueBlock blueblock25 = new blueBlock();
-        addObject(blueblock25,735,415);
+        addObject(blueblock25,735,405);
 
         blueBlock blueblock26 = new blueBlock();
-        addObject(blueblock26,765,415);
+        addObject(blueblock26,765,405);
 
         blueBlock blueblock27 = new blueBlock();
-        addObject(blueblock27,795,415);
+        addObject(blueblock27,795,405);
 
         blueBlock blueblock28 = new blueBlock();
-        addObject(blueblock28,825,415);
+        addObject(blueblock28,825,405);
 
         main main = new main();
         addObject(main,409,210);
         main.setLocation(360,231);
 
-        main main2 = new main();
-        addObject(main2,494,253);
-        main main3 = new main();
-        addObject(main3,642,194);
-        main main4 = new main();
-        addObject(main4,683,244);
-        main main5 = new main();
-        addObject(main5,302,187);
-        main main6 = new main();
-        addObject(main6,172,261);
         blueBlock blueblock29 = new blueBlock();
-        addObject(blueblock29,581,393);
-        blueblock29.setLocation(585,385);
+        addObject(blueblock29,705,375);
+        blueBlock blueblock30 = new blueBlock();
+        addObject(blueblock30,75,375);
     }
 }

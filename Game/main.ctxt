@@ -16,4 +16,6 @@ comment4.text=\r\n\ Method\ to\ change\ the\ coordinates\ of\ the\ main\ charact
 comment5.params=
 comment5.target=void\ fall()
 comment5.text=\r\n\ Falling\ method\ \ IN\ PROGRESS\r\n
-numComments=6
+comment6.params=
+comment6.target=void\ jump()
+numComments=7
