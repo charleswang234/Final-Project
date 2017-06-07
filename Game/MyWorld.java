@@ -118,7 +118,7 @@ public class MyWorld extends World
 
         blueBlock2 blueblock32 = new blueBlock2();
         addObject(blueblock32,645,495);
-        
+
         blueBlock blueblock33 = new blueBlock();
         addObject(blueblock33,645,495);
 
@@ -142,13 +142,18 @@ public class MyWorld extends World
 
         doorUnlock button = new doorUnlock();
         addObject(button,435,195);
-        
+
         door door = new door();
         addObject(door,735,390);
 
         main main = new main();
         addObject(main,409,210);
         main.setLocation(360,231);
+
+        blueBlock blueblock34 = new blueBlock();
+        addObject(blueblock34,477,300);
         
+        blueBlock2 blueblock35 = new blueBlock2();
+        addObject(blueblock35,477,300);
     }
 }

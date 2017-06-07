@@ -31,7 +31,7 @@ public class main extends Actor
         move();
 
         fall(); //IN PROGRESS 
-        jump();	
+        jump(); 
         setLocation(changeX, changeY);
     }    
 
@@ -59,6 +59,10 @@ public class main extends Actor
                 fall = false;
                 changeY = blocksUpDown.getY() - 29;
                 jumping = true;
+            }else if (changeX + 26 > blocksUpDown.getX() && changeX - 26 < blocksUpDown.getX()){
+                changeY = blocksUpDown.getY() + 29;
+                speedUpDown = 0;
+                fall = true;
             }
         }else{
             fall = true;
