@@ -17,7 +17,7 @@ public class main extends Actor
     private int speedLeft = -5; //speed of moving left
     private int changeX; //changing getX() indirectly first
     private int changeY; //changing getY() indirectly first
-    private boolean touchingBlock = false; //checks if touching block from top so main character can jump
+    private boolean jumping = false; //checks if touching block from top so main character can jump
 
     /**
      * Act - do whatever the main wants to do. This method is called whenever
@@ -29,7 +29,9 @@ public class main extends Actor
 
         objectCollision();
         move();
-        fall(); //IN PROGRESS   
+
+        fall(); //IN PROGRESS 
+        jump();	
         setLocation(changeX, changeY);
     }    
 
@@ -49,31 +51,35 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        Actor blocksLeftRight = getOneIntersectingObject(blueBlock.class);
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
+
         if (blocksUpDown != null){
-            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 19 < blocksUpDown.getY()){
+            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
                 fall = false;
                 changeY = blocksUpDown.getY() - 29;
+                jumping = true;
             }
         }else{
             fall = true;
+            jumping = false;
         }
 
         if (blocksLeftRight != null){
-            if (changeX + 23 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
+            if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
-
-            }else if (changeX - 23 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
+            }else if (changeX - 24 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedLeft = 0;
                 changeX = blocksLeftRight.getX() + 29;
             }else{
                 speedRight = 5;
                 speedLeft = -5;
             }
+        }else{
+            speedRight = 5;
+            speedLeft = -5;
         }
-
     }
 
     /**
@@ -90,13 +96,21 @@ public class main extends Actor
      */
     private void fall(){ 
         if (fall){
-            if (speedUpDown < 10 ){
+            if (speedUpDown < 10){
                 speedUpDown++; 
             }
         }else {
             speedUpDown = 0;
         }
         changeY += speedUpDown;
+    }
+
+    private void jump(){
+        if (jumping && Greenfoot.isKeyDown("up")){
+            speedUpDown = -20;
+            fall = true;
+            changeY += speedUpDown;
+        }
     }
 
     /**
