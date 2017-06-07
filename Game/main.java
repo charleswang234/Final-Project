@@ -51,10 +51,11 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
+
         if (blocksUpDown != null){
-            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 19 < blocksUpDown.getY()){
+            if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
                 fall = false;
                 changeY = blocksUpDown.getY() - 29;
                 jumping = true;
@@ -65,10 +66,10 @@ public class main extends Actor
         }
 
         if (blocksLeftRight != null){
-            if (changeX + 23 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
+            if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
-            }else if (changeX - 23 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
+            }else if (changeX - 24 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedLeft = 0;
                 changeX = blocksLeftRight.getX() + 29;
             }else{
@@ -106,7 +107,7 @@ public class main extends Actor
 
     private void jump(){
         if (jumping && Greenfoot.isKeyDown("up")){
-            speedUpDown = -15;
+            speedUpDown = -20;
             fall = true;
             changeY += speedUpDown;
         }

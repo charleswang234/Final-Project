@@ -116,6 +116,12 @@ public class MyWorld extends World
         blueBlock2 blueblock31 = new blueBlock2();
         addObject(blueblock31,705,495);
 
+        blueBlock2 blueblock32 = new blueBlock2();
+        addObject(blueblock32,645,495);
+        
+        blueBlock blueblock33 = new blueBlock();
+        addObject(blueblock33,645,495);
+
         startPipe pipe1 = new startPipe();
         addObject(pipe1,135,135);
 
