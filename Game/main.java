@@ -59,7 +59,7 @@ public class main extends Actor
                 fall = false;
                 changeY = blocksUpDown.getY() - 29;
                 jumping = true;
-            }else if (changeX + 26 > blocksUpDown.getX() && changeX - 26 < blocksUpDown.getX()){
+            }else if (changeX + 25 > blocksUpDown.getX() && changeX - 25 < blocksUpDown.getX()){
                 changeY = blocksUpDown.getY() + 29;
                 speedUpDown = 0;
                 fall = true;
