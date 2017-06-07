@@ -111,7 +111,7 @@ public class main extends Actor
 
     private void jump(){
         if (jumping && Greenfoot.isKeyDown("up")){
-            speedUpDown = -20;
+            speedUpDown = -18;
             fall = true;
             changeY += speedUpDown;
         }

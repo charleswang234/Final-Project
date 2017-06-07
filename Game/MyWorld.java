@@ -155,5 +155,11 @@ public class MyWorld extends World
         
         blueBlock2 blueblock35 = new blueBlock2();
         addObject(blueblock35,477,300);
+        
+        blueBlock blueblock36 = new blueBlock();
+        addObject(blueblock36,400,435);
+        
+        blueBlock2 blueblock37 = new blueBlock2();
+        addObject(blueblock37,400,435);
     }
 }
