@@ -1,31 +1,57 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Main world for Raft Battles
+ * Main world for Only Level Reboot
  * 
- * @author Charles Wang
+ * @author Charles Wang and Victor Huang
  * @version June 2017
  */
 public class MyWorld extends World
 {
+    /**These 2D arrays map out the platforms in the game. 
+     * Values of 1 indicate that there is a hitbox in the spot in the world.
+     * The world is laid out on a 28 * 16 grid.
+     * The first 2D array maps out the up and down platform/unit collision boxes.
+     * The second 2D array maps out the left and right platform/unit collision boxes.
+     */
     int [][] upMap = {
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-    };
+            {0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,0,1,1,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
+            {0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0},
+            {0,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0},
+            {0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        };
+
+    int [][] leftMap = {
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0},
+            {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
+            {0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0},
+            {0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0},
+            {0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0},
+            {0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,1},
+            {0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,1},
+            {0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        };
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -43,52 +69,25 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        //line 1: up down hitbox
+        //The up and down hitboxes
+        for (int i = 0; i < upMap.length;i++){
+            for (int j = 0; j < upMap[i].length;j++){
+                if (upMap[i][j] == 1){
+                    addObject(new blueBlock(),j*30 + 15,i*30 + 15);
+                }
+            }
+        }
 
-        blueBlock upOne9 = new blueBlock();
-        addObject(upOne9,255,465);
+        //The left and right hitboxes
+        for (int i = 0; i < leftMap.length;i++){
+            for (int j = 0; j < leftMap[i].length;j++){
+                if (leftMap[i][j] == 1){
+                    addObject(new blueBlock2(),j*30 + 15,i*30 + 15);
+                }
+            }
+        }
 
-        blueBlock upOne10 = new blueBlock();
-        addObject(upOne10,285,465);
-
-        blueBlock upOne11 = new blueBlock();
-        addObject(upOne11,315,465);
-
-        blueBlock upOne12 = new blueBlock();
-        addObject(upOne12,345,465);
-
-        //line 2: up-down hitbox
-
-        blueBlock upTwo22 = new blueBlock();
-        addObject(upTwo22,645,435);
-
-        blueBlock upTwo23 = new blueBlock();
-        addObject(upTwo23,675,435);
-
-        blueBlock upTwo24 = new blueBlock();
-        addObject(upTwo24,705,435);
-
-        blueBlock upTwo25 = new blueBlock();
-        addObject(upTwo25,735,435);
-
-        blueBlock upTwo26 = new blueBlock();
-        addObject(upTwo26,765,435);
-        
-        blueBlock upTwo27 = new blueBlock();
-        addObject(upTwo27,795,435);
-        
-        //line 2: left-right hitbox
-
-        blueBlock2 leftTwo13 = new blueBlock2();
-        addObject(leftTwo13,375,435);
-        
-        //To Be Sorted
-        startPipe pipe1 = new startPipe();
-        addObject(pipe1,135,135);
-
-        endPipe pipe2 = new endPipe();
-        addObject(pipe2,795,405);
-
+        //Spikes        
         botSpike bSpikeTwo5 = new botSpike();
         addObject(bSpikeTwo5,135,435);
 
@@ -100,50 +99,67 @@ public class MyWorld extends World
 
         botSpike bSpikeTwo8 = new botSpike();
         addObject(bSpikeTwo8,225,435);
-        
+
         botSpike bSpikeTwo17 = new botSpike();
         addObject(bSpikeTwo17,495,435);
-        
+
         botSpike bSpikeTwo18 = new botSpike();
         addObject(bSpikeTwo18,525,435);
-        
+
         botSpike bSpikeThree22 = new botSpike();
         addObject(bSpikeThree22,645,405);
-        
-        leftSpike lSpike1 = new leftSpike();
-        addObject(lSpike1,45,195);
-        
-        leftSpike lSpike2 = new leftSpike();
-        addObject(lSpike2,45,225);
-        
-        leftSpike lSpike3 = new leftSpike();
-        addObject(lSpike3,45,255);
-        
+
+        leftSpike lSpikeEight1 = new leftSpike();
+        addObject(lSpikeEight1,45,195);
+
+        leftSpike lSpikeNine1 = new leftSpike();
+        addObject(lSpikeNine1,45,225);
+
+        leftSpike lSpikeTen1 = new leftSpike();
+        addObject(lSpikeTen1,45,255);
+
         rightSpike rSpikeSeven27 = new rightSpike();
         addObject(rSpikeSeven27,795,285);
-        
+
         rightSpike rSpikeEight27 = new rightSpike();
         addObject(rSpikeEight27,795,255);
-        
+
         rightSpike rSpikeNine27 = new rightSpike();
         addObject(rSpikeNine27,795,225);
-        
+
         rightSpike rSpikeTen27 = new rightSpike();
         addObject(rSpikeTen27,795,195);
-        
+
         topSpike tSpikeFifteen14 = new topSpike();
         addObject(tSpikeFifteen14,405,45);
+
         topSpike tSpikeFifteen15 = new topSpike();
         addObject(tSpikeFifteen15,435,45);
+
         topSpike tSpikeFifteen16 = new topSpike();
         addObject(tSpikeFifteen16,465,45);
-        
+
+        topSpike tSpikeThirteen24 = new topSpike();
+        addObject(tSpikeThirteen24,705,105);
+
+        topSpike tSpikeThirteen25 = new topSpike();
+        addObject(tSpikeThirteen25,735,105);
+
+        //Pipes        
+        startPipe pipe1 = new startPipe();
+        addObject(pipe1,135,135);
+
+        endPipe pipe2 = new endPipe();
+        addObject(pipe2,795,405);
+
+        //Door and door controls        
         doorUnlock button = new doorUnlock();
         addObject(button,435,195);
 
         door door = new door();
         addObject(door,735,390);
 
+        //Character
         main main = new main();
         addObject(main,409,210);
         main.setLocation(360,231);

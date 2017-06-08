@@ -18,4 +18,5 @@ comment5.target=void\ fall()
 comment5.text=\r\n\ Falling\ method\ \ IN\ PROGRESS\r\n
 comment6.params=
 comment6.target=void\ jump()
+comment6.text=\r\n\ create\ jump\ and\ jump\ delay\ and\ can\ only\ jump\ when\ on\ the\ block\r\n\ touching\ the\ block,\ unable\ to\ moving\ certain\ areas\r\n
 numComments=7
