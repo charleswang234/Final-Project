@@ -51,6 +51,7 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
+
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
         Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
 
