@@ -109,16 +109,16 @@ public class main extends Actor
         changeY += speedUpDown;
     }
 
+    /**
+     * create jump and jump delay and can only jump when on the block
+     * touching the block, unable to moving certain areas
+     */
     private void jump(){
         if (jumping && Greenfoot.isKeyDown("up")){
-            speedUpDown = -18;
+            speedUpDown = -15;
             fall = true;
             changeY += speedUpDown;
         }
     }
 
-    /**
-     * create jump and jump delay nd can only jump when on the block
-     * touching the block, unable to moving certain areas
-     */
 }
