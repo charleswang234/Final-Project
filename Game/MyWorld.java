@@ -191,13 +191,6 @@ public class MyWorld extends World
         topSpike tSpikeThirteen25 = new topSpike();
         addObject(tSpikeThirteen25,735,105);
 
-        //Pipes        
-        startPipe pipe1 = new startPipe();
-        addObject(pipe1,135,135);
-
-        endPipe pipe2 = new endPipe();
-        addObject(pipe2,795,405);
-
         //Door and door controls        
         doorUnlock button = new doorUnlock();
         addObject(button,435,195);
@@ -207,7 +200,13 @@ public class MyWorld extends World
 
         //Character
         main main = new main();
-        addObject(main,409,210);
-        main.setLocation(360,231);
+        addObject(main,135,155);
+        
+        //Pipes        
+        startPipe pipe1 = new startPipe();
+        addObject(pipe1,135,135);
+
+        endPipe pipe2 = new endPipe();
+        addObject(pipe2,795,405);
     }
 }

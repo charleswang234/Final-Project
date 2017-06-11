@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Jun 11 10:30:39 EDT 2017
+#Sun Jun 11 11:11:01 EDT 2017
 editor.fx.0.height=700
 target2.width=80
 target8.name=rightSpike
@@ -149,10 +149,10 @@ target12.name=blueBlock2
 class.endPipe.superclass=greenfoot.Actor
 dependency1.type=UsesDependency
 target4.type=ClassTarget
-target8.width=80
 target12.showInterface=false
-dependency8.to=startPipe
+target8.width=80
 class.blueBlock.superclass=greenfoot.Actor
+dependency8.to=startPipe
 simulation.speed=50
 target9.width=80
 target7.height=50
@@ -178,7 +178,7 @@ target4.name=startPipe
 readme.y=10
 readme.x=10
 target4.height=50
-class.rightSpike.superclass=greenfoot.Actor
-readme.height=58
 target12.typeParameters=
+readme.height=58
+class.rightSpike.superclass=greenfoot.Actor
 target1.width=80

@@ -30,7 +30,7 @@ public class main extends Actor
         objectCollision();
         move();
 
-        fall(); //IN PROGRESS 
+        fall();
         jump(); 
         setLocation(changeX, changeY);
     }    
@@ -51,10 +51,13 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
+        upDownCollision();
+        leftRightCollision();
+        spikeCollision();
+    }
 
+    private void upDownCollision(){
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
-        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
-
         if (blocksUpDown != null){
             if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
                 fall = false;
@@ -69,7 +72,10 @@ public class main extends Actor
             fall = true;
             jumping = false;
         }
+    }
 
+    private void leftRightCollision(){
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
         if (blocksLeftRight != null){
             if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
@@ -86,6 +92,17 @@ public class main extends Actor
             speedLeft = -5;
         }
     }
+
+    private void spikeCollision(){
+        Actor spikeBot = getOneIntersectingObject(botSpike.class);
+        Actor spikeRight = getOneIntersectingObject(rightSpike.class);
+        Actor spikeTop = getOneIntersectingObject(topSpike.class);
+        Actor spikeLeft = getOneIntersectingObject(leftSpike.class);
+
+        if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
+            setLocation(135, 155);
+        }
+    }	
 
     /**
      * Method to change the coordinates of the main character indirectly
