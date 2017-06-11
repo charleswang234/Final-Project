@@ -94,15 +94,16 @@ public class main extends Actor
     }
 
     private void spikeCollision(){
-        Actor spikeBot = getOneIntersectingObject(botSpike.class);
-        Actor spikeRight = getOneIntersectingObject(rightSpike.class);
-        Actor spikeTop = getOneIntersectingObject(topSpike.class);
-        Actor spikeLeft = getOneIntersectingObject(leftSpike.class);
+        Actor spikeBot = getOneObjectAtOffset(0,0, botSpike.class);
+        Actor spikeRight = getOneObjectAtOffset(0,0, rightSpike.class);
+        Actor spikeTop = getOneObjectAtOffset(0,0, topSpike.class);
+        Actor spikeLeft = getOneObjectAtOffset(0,0, leftSpike.class);
 
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
-            setLocation(135, 155);
+            this.setLocation(135,135);
         }
-    }	
+
+    }   
 
     /**
      * Method to change the coordinates of the main character indirectly
