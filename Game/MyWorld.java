@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    
+        door door = new door();
     /**These 2D arrays map out the platforms in the game. 
      * Values of 1 indicate that there is a hitbox in the spot in the world.
      * The world is laid out on a 28 * 16 grid.
@@ -54,7 +56,7 @@ public class MyWorld extends World
         };
 
     int [][] miscMap = {
-            
+
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -106,7 +108,7 @@ public class MyWorld extends World
                 }
             }
         }
-        
+
         for (int i = 0; i < miscMap.length;i++){
             for (int j = 0; j < miscMap[i].length;j++){
                 if (miscMap[i][j] == 1){
@@ -132,7 +134,7 @@ public class MyWorld extends World
                 }
             }
         }
-        
+
         //Spikes        
         botSpike bSpikeTwo5 = new botSpike();
         addObject(bSpikeTwo5,135,435);
@@ -195,13 +197,13 @@ public class MyWorld extends World
         doorUnlock button = new doorUnlock();
         addObject(button,435,195);
 
-        door door = new door();
         addObject(door,735,390);
 
         //Character
         main main = new main();
-        addObject(main,135,155);
-        
+        addObject(main,409,210);
+        main.setLocation(360,231);
+
         //Pipes        
         startPipe pipe1 = new startPipe();
         addObject(pipe1,135,135);
@@ -209,4 +211,7 @@ public class MyWorld extends World
         endPipe pipe2 = new endPipe();
         addObject(pipe2,795,405);
     }
+
+
+
 }

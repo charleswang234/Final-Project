@@ -30,9 +30,11 @@ public class main extends Actor
         objectCollision();
         move();
 
-        fall();
+        fall(); 
         jump(); 
         setLocation(changeX, changeY);
+        spikeCollision();
+        doorUnlockCollision();
     }    
 
     /**
@@ -51,13 +53,9 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        upDownCollision();
-        leftRightCollision();
-        spikeCollision();
-    }
-
-    private void upDownCollision(){
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
+
         if (blocksUpDown != null){
             if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
                 fall = false;
@@ -72,10 +70,7 @@ public class main extends Actor
             fall = true;
             jumping = false;
         }
-    }
 
-    private void leftRightCollision(){
-        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
         if (blocksLeftRight != null){
             if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
@@ -94,15 +89,25 @@ public class main extends Actor
     }
 
     private void spikeCollision(){
-        Actor spikeBot = getOneObjectAtOffset(0,0, botSpike.class);
-        Actor spikeRight = getOneObjectAtOffset(0,0, rightSpike.class);
-        Actor spikeTop = getOneObjectAtOffset(0,0, topSpike.class);
-        Actor spikeLeft = getOneObjectAtOffset(0,0, leftSpike.class);
+        Actor spikeBot = getOneIntersectingObject(botSpike.class);
+        Actor spikeRight = getOneIntersectingObject(rightSpike.class);
+        Actor spikeTop = getOneIntersectingObject(topSpike.class);
+        Actor spikeLeft = getOneIntersectingObject(leftSpike.class);
 
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
-            this.setLocation(135,135);
+            setLocation(135,135);
         }
+    }   
 
+    /**
+     * Collision for unlocking door
+     */
+    private void doorUnlockCollision(){
+        Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
+        if (unlockDoor != null && speedUpDown > 0){
+            ((MyWorld)getWorld()).removeObject(((MyWorld)getWorld()).door);
+            
+        }
     }   
 
     /**
