@@ -120,5 +120,4 @@ public class main extends Actor
             changeY += speedUpDown;
         }
     }
-
 }

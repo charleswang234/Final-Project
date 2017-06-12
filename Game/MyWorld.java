@@ -48,7 +48,7 @@ public class MyWorld extends World
             {0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0},
             {0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0},
             {0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,1},
-            {0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,1},
+            {0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1},
             {0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
         };
@@ -60,8 +60,8 @@ public class MyWorld extends World
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,0,0},
             {0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,1,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,3,0},
+            {0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,1,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,3,0},
             {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0},
             {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0},
@@ -128,86 +128,16 @@ public class MyWorld extends World
                     addObject(new startPipe(),j*30 + 15,i*30 + 15);
                 }
                 else if (miscMap[i][j] == 7){
+                    addObject(new main(),135,155);
+                }
+                else if (miscMap[i][j] == 8){
                     addObject(new doorUnlock(),j*30 + 15,i*30 + 15);
                 }
             }
         }
         
-        //Spikes        
-        botSpike bSpikeTwo5 = new botSpike();
-        addObject(bSpikeTwo5,135,435);
-
-        botSpike bSpikeTwo6 = new botSpike();
-        addObject(bSpikeTwo6,165,435);
-
-        botSpike bSpikeTwo7 = new botSpike();
-        addObject(bSpikeTwo7,195,435);
-
-        botSpike bSpikeTwo8 = new botSpike();
-        addObject(bSpikeTwo8,225,435);
-
-        botSpike bSpikeTwo17 = new botSpike();
-        addObject(bSpikeTwo17,495,435);
-
-        botSpike bSpikeTwo18 = new botSpike();
-        addObject(bSpikeTwo18,525,435);
-
-        botSpike bSpikeThree22 = new botSpike();
-        addObject(bSpikeThree22,645,405);
-
-        leftSpike lSpikeEight1 = new leftSpike();
-        addObject(lSpikeEight1,45,195);
-
-        leftSpike lSpikeNine1 = new leftSpike();
-        addObject(lSpikeNine1,45,225);
-
-        leftSpike lSpikeTen1 = new leftSpike();
-        addObject(lSpikeTen1,45,255);
-
-        rightSpike rSpikeSeven27 = new rightSpike();
-        addObject(rSpikeSeven27,795,285);
-
-        rightSpike rSpikeEight27 = new rightSpike();
-        addObject(rSpikeEight27,795,255);
-
-        rightSpike rSpikeNine27 = new rightSpike();
-        addObject(rSpikeNine27,795,225);
-
-        rightSpike rSpikeTen27 = new rightSpike();
-        addObject(rSpikeTen27,795,195);
-
-        topSpike tSpikeFifteen14 = new topSpike();
-        addObject(tSpikeFifteen14,405,45);
-
-        topSpike tSpikeFifteen15 = new topSpike();
-        addObject(tSpikeFifteen15,435,45);
-
-        topSpike tSpikeFifteen16 = new topSpike();
-        addObject(tSpikeFifteen16,465,45);
-
-        topSpike tSpikeThirteen24 = new topSpike();
-        addObject(tSpikeThirteen24,705,105);
-
-        topSpike tSpikeThirteen25 = new topSpike();
-        addObject(tSpikeThirteen25,735,105);
-
-        //Pipes        
-        startPipe pipe1 = new startPipe();
-        addObject(pipe1,135,135);
-
-        endPipe pipe2 = new endPipe();
-        addObject(pipe2,795,405);
-
         //Door and door controls        
-        doorUnlock button = new doorUnlock();
-        addObject(button,435,195);
-
         door door = new door();
         addObject(door,735,390);
-
-        //Character
-        main main = new main();
-        addObject(main,409,210);
-        main.setLocation(360,231);
     }
 }
