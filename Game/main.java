@@ -28,7 +28,7 @@ public class main extends Actor
         copy();
 
         objectCollision();
-        doorCollision();	
+        doorCollision();    
         move();
 
         fall(); 
@@ -97,18 +97,19 @@ public class main extends Actor
         Actor spikeRight = getOneIntersectingObject(rightSpike.class);
         Actor spikeTop = getOneIntersectingObject(topSpike.class);
         Actor spikeLeft = getOneIntersectingObject(leftSpike.class);
-
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135);
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
-
+             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
         }
     }   
 
     private void belowDeath(){
         if (changeY > 465){
+            Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
             setLocation(135,135);
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
+             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
         }
 
     }
@@ -118,11 +119,11 @@ public class main extends Actor
      */
     private void doorUnlockCollision(){
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
-        if (unlockDoor != null && speedUpDown > 0){
+        Actor buttonPressed = getOneIntersectingObject(buttonPressed.class);
+        if (unlockDoor != null){
             ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door);
-
+            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).unlockDoor);
         }
-
     }   
 
     private void doorCollision(){

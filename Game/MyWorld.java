@@ -43,6 +43,9 @@ public class MyWorld extends ZeeWeeld
             }
         }
 
+        addObject(new buttonPressed(),435,195);
+        addObject(unlockDoor,435,195);
+
         //Other objects
         for (int i = 0; i < miscMap.length;i++){
             for (int j = 0; j < miscMap[i].length;j++){
@@ -61,18 +64,19 @@ public class MyWorld extends ZeeWeeld
                 else if (miscMap[i][j] == 5){
                     addObject(new endPipe(),j*30 + 15,i*30 + 15);
                 }
-                else if (miscMap[i][j] == 6){ 
-                    addObject(new doorUnlock(),j*30 + 15,i*30 + 15);
-                }
                 else if (miscMap[i][j] == 7){ 
                     addObject(new main(),135,155);
                 }
+
                 else if (miscMap[i][j] == 8){ 
-                    addObject(new startPipe(),j*30 + 15,i*30 + 15);
+                    addObject(new startPipe(),135,135);
                 }
+
             }
         }
         addObject(door,735,390);
         addObject(gameTime,700,550);
+
     }
+
 }
