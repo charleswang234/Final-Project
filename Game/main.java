@@ -65,6 +65,7 @@ public class main extends Actor
                 changeY = blocksUpDown.getY() + 29;
                 speedUpDown = 0;
                 fall = true;
+                jumping = false;
             }
         }else{
             fall = true;

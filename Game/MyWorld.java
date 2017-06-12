@@ -212,6 +212,4 @@ public class MyWorld extends World
         addObject(pipe2,795,405);
     }
 
-
-
 }
