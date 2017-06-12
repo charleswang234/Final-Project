@@ -28,13 +28,16 @@ public class main extends Actor
         copy();
 
         objectCollision();
+        doorCollision();	
         move();
 
         fall(); 
         jump(); 
+
         setLocation(changeX, changeY);
         spikeCollision();
         doorUnlockCollision();
+
     }    
 
     /**
@@ -97,6 +100,8 @@ public class main extends Actor
 
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135);
+            ((MyWorld)getWorld()).addObject(((MyWorld)getWorld()).door,735,390);
+
         }
     }   
 
@@ -107,9 +112,20 @@ public class main extends Actor
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
         if (unlockDoor != null && speedUpDown > 0){
             ((MyWorld)getWorld()).removeObject(((MyWorld)getWorld()).door);
-            
+
         }
+
     }   
+
+    private void doorCollision(){
+        Actor door = getOneIntersectingObject(door.class);
+        if (door != null){
+            if (changeX + 24 < door.getX() && changeY + 58 >= door.getY() && changeY - 58 <= door.getY()){
+                speedRight = 0;
+                changeX = door.getX() - 29;
+            }
+        }
+    }
 
     /**
      * Method to change the coordinates of the main character indirectly
