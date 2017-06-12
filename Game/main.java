@@ -99,8 +99,10 @@ public class main extends Actor
         Actor spikeLeft = getOneIntersectingObject(leftSpike.class);
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135);
+            ((ZeeWeeld)getWorld()).deaths += 1;
+            ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY);
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
-             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
         }
     }   
 
@@ -111,7 +113,6 @@ public class main extends Actor
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
              ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
         }
-
     }
 
     /**

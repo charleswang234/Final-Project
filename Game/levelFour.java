@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Level 1 for This is the Only Level Reboot
+ * Level 4 for This is the Only Level Reboot
  * 
  * @author Charles Wang and Victor Huang
  * @version June 2017
  */
-public class MyWorld extends ZeeWeeld
+public class levelFour extends ZeeWeeld
 {
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class levelFour.
      * 
      */
-    public MyWorld()
-    {    
-        super(1); 
+    public levelFour()
+    {
+        super(4);
         prepare();
     }
 
@@ -43,40 +43,30 @@ public class MyWorld extends ZeeWeeld
             }
         }
 
-        addObject(new buttonPressed(),435,195);
-        addObject(unlockDoor,435,195);
-
-        //Other objects
-        for (int i = 0; i < miscMap.length;i++){
-            for (int j = 0; j < miscMap[i].length;j++){
-                if (miscMap[i][j] == 1){
+        //Spikes
+        for (int i = 0; i < spikeMap.length;i++){
+            for (int j = 0; j < spikeMap[i].length;j++){
+                if (spikeMap[i][j] == 1){
                     addObject(new leftSpike(),j*30 + 15,i*30 + 15);
                 }
-                else if (miscMap[i][j] == 2){
+                else if (spikeMap[i][j] == 2){
                     addObject(new botSpike(),j*30 + 15,i*30 + 15);
                 }
-                else if (miscMap[i][j] == 3){
+                else if (spikeMap[i][j] == 3){
                     addObject(new rightSpike(),j*30 + 15,i*30 + 15);
                 }
-                else if (miscMap[i][j] == 4){
+                else if (spikeMap[i][j] == 4){
                     addObject(new topSpike(),j*30 + 15,i*30 + 15);
                 }
-                else if (miscMap[i][j] == 5){
-                    addObject(new endPipe(),j*30 + 15,i*30 + 15);
-                }
-                else if (miscMap[i][j] == 7){ 
-                    addObject(new main(),135,155);
-                }
-
-                else if (miscMap[i][j] == 8){ 
-                    addObject(new startPipe(),135,135);
-                }
-
             }
         }
+
+        addObject(new buttonPressed(),435,195);
+        addObject(unlockDoor,435,195);
+        addObject(new main(),135,155);
+        addObject(new startPipe(),135,135);
+        addObject(new endPipe(),795,405);
         addObject(door,735,390);
         addObject(gameTime,700,550);
-
     }
-
 }
