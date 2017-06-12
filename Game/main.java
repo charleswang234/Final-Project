@@ -38,6 +38,7 @@ public class main extends Actor
         spikeCollision();
         doorUnlockCollision();
 
+        belowDeath();
     }    
 
     /**
@@ -58,7 +59,7 @@ public class main extends Actor
     private void objectCollision(){
         Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
         Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
-        
+
         if (blocksUpDown != null){
             if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
                 fall = false;
@@ -99,10 +100,18 @@ public class main extends Actor
 
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135);
-            ((MyWorld)getWorld()).addObject(((MyWorld)getWorld()).door,735,390);
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
 
         }
     }   
+
+    private void belowDeath(){
+        if (changeY > 465){
+            setLocation(135,135);
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
+        }
+
+    }
 
     /**
      * Collision for unlocking door
@@ -110,7 +119,7 @@ public class main extends Actor
     private void doorUnlockCollision(){
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
         if (unlockDoor != null && speedUpDown > 0){
-            ((MyWorld)getWorld()).removeObject(((MyWorld)getWorld()).door);
+            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door);
 
         }
 
