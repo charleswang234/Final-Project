@@ -34,7 +34,8 @@ public class main extends Actor
             speed = 8;
             collisionSetX = 21;
             numberOfJumps = 1;
-        }else if (((ZeeWeeld)getWorld()).level == 3){
+        }else if (((ZeeWeeld)
+            getWorld()).level == 3){
             speed = -5;
             collisionSetX = 24;
             numberOfJumps = 2;
@@ -162,7 +163,7 @@ public class main extends Actor
             ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
-            
+
             if (((ZeeWeeld)getWorld()).level == 2){
                 numberOfJumps = 1;
             }
@@ -177,7 +178,7 @@ public class main extends Actor
         Actor buttonPressed = getOneIntersectingObject(buttonPressed.class);
         if (unlockDoor != null){
             ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //Removes the button
-            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).unlockDoor); //removes the door 
+            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).unlockDoor); //removes the door
         }
     }   
 
