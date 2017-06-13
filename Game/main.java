@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.HashMap;
 /**
  * Actor class for the main character of the game. Includes object collision and movement as well as some removing/adding objects.
  * 
@@ -18,6 +18,7 @@ public class main extends Actor
     private int changeX; //Changing getX() indirectly first
     private int changeY; //Changing getY() indirectly first
     private boolean jumping = false; //Checks if touching block from top so main character can jump
+    private HashMap<Integer, String> levelSelector;
 
     /**
      * Act - do whatever the main wants to do. This method is called whenever
@@ -35,6 +36,7 @@ public class main extends Actor
         spikeCollision();
         doorUnlockCollision();
         belowDeath();
+        endPipeCollision();
     }    
 
     /**
@@ -147,7 +149,10 @@ public class main extends Actor
      * Collision with the end pipe, sets a new world if possible
      */
     private void endPipeCollision(){
-
+        Actor endPipe = getOneIntersectingObject(endPipe.class);
+        if (endPipe != null){
+             Greenfoot.setWorld(new levelTwo());
+        }
     }
 
     /**

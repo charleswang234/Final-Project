@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.HashMap;
 /**
  * Super Class of all of the levels for This is the Only Level Reboot
  * 
@@ -18,6 +18,8 @@ public class ZeeWeeld extends World
 
     Timer timeCount = new Timer(); //Creates an instance of Timer
 
+    static HashMap<Integer,String> levelColour = new HashMap<Integer,String>(); //HashMap used to set the colour of the blocks based on the level of the game
+
     /**
      * Constructor for objects of class ZeeWeeld.
      * 
@@ -26,6 +28,7 @@ public class ZeeWeeld extends World
     {    
         super(840, 600, 1, true); 
         level = num;
+        levelInitializer();
     }
 
     /**These 2D arrays map out the objects in the game. 
@@ -88,4 +91,16 @@ public class ZeeWeeld extends World
             {0,0,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
         };
+
+    /**
+     * Method to set the colour of the block based on the level of the game
+     */
+    public void levelInitializer(){
+        levelColour.put(1,"green block.jpg");
+        levelColour.put(2,"blue block.jpg");
+        levelColour.put(3,"yellow block.jpg");
+        levelColour.put(4,"magenta block.jpg");
+        levelColour.put(5,"red block.jpg");
+        levelColour.put(6,"cyan block.jpg");
+    }
 }

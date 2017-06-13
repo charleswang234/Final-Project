@@ -14,22 +14,7 @@ public class blueBlock extends Actor
      */
     public blueBlock(){
         if (((ZeeWeeld)getWorld()).level == 1){
-            setImage ("green block.jpg");
-        }
-        else if (((ZeeWeeld)getWorld()).level == 2){
-            setImage ("blue block.jpg");
-        }
-        else if (((ZeeWeeld)getWorld()).level == 3){
-            setImage ("yellow block.jpg");
-        }
-        else if (((ZeeWeeld)getWorld()).level == 4){
-            setImage ("magenta block.jpg");
-        }
-        else if (((ZeeWeeld)getWorld()).level == 5){
-            setImage ("red block.jpg");
-        }
-        else if (((ZeeWeeld)getWorld()).level == 6){
-            setImage ("cyan block.jpg");
+            setImage (((ZeeWeeld)getWorld()).levelColour.get(((ZeeWeeld)getWorld()).level));
         }
     }
 }
