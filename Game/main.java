@@ -19,19 +19,37 @@ public class main extends Actor
     private int changeY; //Changing getY() indirectly first
     private boolean jumping = false; //Checks if touching block from top so main character can jump
 
-    
     //changing variables depending on the level
     private int speed; //changing speed
     private int collisionSetX; //changing object collision
     private int numberOfJumps; //changing the number of jumps
-    
+
     public main(){
-        if (((ZeeWeeld)getWorld()).level == 2){
-            speed = 10;
-            collisionSetX = 19;
-        }else{
+        if (((ZeeWeeld)getWorld()).level == 1){
             speed = 5;
             collisionSetX = 24;
+            numberOfJumps = 2;
+        }
+        else if (((ZeeWeeld)getWorld()).level == 2){
+            speed = 8;
+            collisionSetX = 21;
+            numberOfJumps = 1;
+        }else if (((ZeeWeeld)getWorld()).level == 3){
+            speed = -5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
+        }else if (((ZeeWeeld)getWorld()).level == 4){
+            speed = 5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
+        }else if (((ZeeWeeld)getWorld()).level == 5){
+            speed = 5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
+        }else if (((ZeeWeeld)getWorld()).level == 6){
+            speed = 5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
         }
 
     }
@@ -91,10 +109,18 @@ public class main extends Actor
 
         if (blocksLeftRight != null){
             if (changeX + collisionSetX < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
-                speedRight = 0;
+                if (((ZeeWeeld)getWorld()).level == 3){
+                    speedLeft = 0;
+                }else{
+                    speedRight = 0;
+                }
                 changeX = blocksLeftRight.getX() - 29;
             }else if (changeX - collisionSetX > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
-                speedLeft = 0;
+                if (((ZeeWeeld)getWorld()).level == 3){
+                    speedRight = 0;
+                }else{
+                    speedLeft = 0;
+                }
                 changeX = blocksLeftRight.getX() + 29;
             }else{
                 speedRight = speed;
@@ -120,6 +146,9 @@ public class main extends Actor
             ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY); // Replaces character with a dead body
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
+            if (((ZeeWeeld)getWorld()).level == 2){
+                numberOfJumps = 1;
+            }
         }
     }   
 
@@ -133,6 +162,10 @@ public class main extends Actor
             ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
+            
+            if (((ZeeWeeld)getWorld()).level == 2){
+                numberOfJumps = 1;
+            }
         }
     }
 
@@ -208,10 +241,13 @@ public class main extends Actor
      * Create jump and jump delay and can only jump when on the block touching the block
      */
     private void jump(){
-        if (jumping && Greenfoot.isKeyDown("up")){
+        if (jumping && Greenfoot.isKeyDown("up") && (numberOfJumps == 2 || numberOfJumps == 1)){
             speedUpDown = -15;
             fall = true;
             changeY += speedUpDown;
+            if (numberOfJumps == 1){
+                numberOfJumps = 0;
+            }
         }
     }
 
