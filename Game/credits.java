@@ -20,5 +20,6 @@ public class credits extends World
     
     public void prepare(){
         addObject(new backMenuOne(),630,460);
+        addObject(new troll(), 204,325);
     }
 }

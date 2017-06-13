@@ -15,5 +15,10 @@ public class winScreen extends World
     public winScreen()
     {    
         super(840, 600, 1); 
+        prepare();
+    }
+    
+    public void prepare(){
+        addObject(new backMenuOne(),605,480);  
     }
 }

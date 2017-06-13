@@ -23,5 +23,6 @@ public class menu extends World
         addObject(new continueButton(),675,260);
         addObject(new howToPlayButton(),675,350);
         addObject(new creditsButton(),675,440);
+        
     }
 }

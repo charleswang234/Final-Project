@@ -1,24 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class newGame here.
+ * Write a description of class troll here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class newGame extends Actor
+public class troll extends Actor
 {
     /**
-     * Act - do whatever the newGame wants to do. This method is called whenever
+     * Act - do whatever the troll wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         if (Greenfoot.mouseClicked(this)){
-            ZeeWeeld.deaths = 0;
-            ZeeWeeld.time = 0;
-            ZeeWeeld.trollingTrue = false;
-            Greenfoot.setWorld(new levelOne());
+            ZeeWeeld.trollingTrue = true;
         }
     }    
 }

@@ -22,6 +22,8 @@ public class ZeeWeeld extends World
 
     static HashMap<Integer,String> levelColour = new HashMap<Integer,String>(); //HashMap used to set the colour of the blocks based on the level of the game
 
+    static boolean trollingTrue = false;
+    
     /**
      * Constructor for objects of class ZeeWeeld.
      * 

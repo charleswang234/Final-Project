@@ -179,9 +179,15 @@ public class main extends Actor
     private void doorUnlockCollision(){
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
         Actor buttonPressed = getOneIntersectingObject(buttonPressed.class);
+
         if (unlockDoor != null){
+            ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(0); //Removes the button}k
+            if (ZeeWeeld.level != 5){
+                ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //removes the door
+            }
+        }
+        if (ZeeWeeld.level == 5 && ZeeWeeld.trollingTrue){
             ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //removes the door
-            ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(0); //Removes the button
         }
     }   
 
@@ -214,6 +220,8 @@ public class main extends Actor
                 Greenfoot.setWorld(new levelFive());
             }else if (ZeeWeeld.level == 5){
                 Greenfoot.setWorld(new levelSix());
+            }else if (ZeeWeeld.level == 6){
+                Greenfoot.setWorld(new winScreen());
             }
         }
     }
