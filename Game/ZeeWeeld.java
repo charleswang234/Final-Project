@@ -103,7 +103,7 @@ public class ZeeWeeld extends World
         levelColour.put(5,"red block.jpg");
         levelColour.put(6,"cyan block.jpg");
     }
-    
+
     public void prepare(){
         addObject(timeCount,135,135);
         //The up and down hitboxes
@@ -144,10 +144,12 @@ public class ZeeWeeld extends World
 
         addObject(new buttonPressed(),435,195);
         addObject(unlockDoor,435,195);
+        addObject(door,735,390);
+
         addObject(new main(),135,155);
         addObject(new startPipe(),135,135);
         addObject(new endPipe(),795,405);
-        addObject(door,735,390);
+
         addObject(gameTime,700,550);
     }
 }
