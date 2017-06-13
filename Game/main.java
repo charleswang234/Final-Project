@@ -18,7 +18,23 @@ public class main extends Actor
     private int changeX; //Changing getX() indirectly first
     private int changeY; //Changing getY() indirectly first
     private boolean jumping = false; //Checks if touching block from top so main character can jump
-    private HashMap<Integer, String> levelSelector;
+
+    
+    //changing variables depending on the level
+    private int speed; //changing speed
+    private int collisionSetX; //changing object collision
+    private int numberOfJumps; //changing the number of jumps
+    
+    public main(){
+        if (((ZeeWeeld)getWorld()).level == 2){
+            speed = 10;
+            collisionSetX = 19;
+        }else{
+            speed = 5;
+            collisionSetX = 24;
+        }
+
+    }
 
     /**
      * Act - do whatever the main wants to do. This method is called whenever
@@ -74,19 +90,19 @@ public class main extends Actor
         }
 
         if (blocksLeftRight != null){
-            if (changeX + 24 < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
+            if (changeX + collisionSetX < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedRight = 0;
                 changeX = blocksLeftRight.getX() - 29;
-            }else if (changeX - 24 > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
+            }else if (changeX - collisionSetX > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 speedLeft = 0;
                 changeX = blocksLeftRight.getX() + 29;
             }else{
-                speedRight = 5;
-                speedLeft = -5;
+                speedRight = speed;
+                speedLeft = -speed;
             }
         }else{
-            speedRight = 5;
-            speedLeft = -5;
+            speedRight = speed;
+            speedLeft = -speed;
         }
     }
 
@@ -138,7 +154,7 @@ public class main extends Actor
     private void doorCollision(){
         Actor door = getOneIntersectingObject(door.class);
         if (door != null){
-            if (changeX + 24 < door.getX() && changeY + 58 >= door.getY() && changeY - 58 <= door.getY()){
+            if (changeX + collisionSetX < door.getX() && changeY + 58 >= door.getY() && changeY - 58 <= door.getY()){
                 speedRight = 0;
                 changeX = door.getX() - 29;
             }
@@ -150,10 +166,17 @@ public class main extends Actor
      */
     private void endPipeCollision(){
         Actor endPipe = getOneIntersectingObject(endPipe.class);
-        if (endPipe != null){
+        if (endPipe != null && changeX + 0 > endPipe.getX()){
             if (((ZeeWeeld)getWorld()).level == 1){
-
                 Greenfoot.setWorld(new levelTwo());
+            }else if (((ZeeWeeld)getWorld()).level == 2){
+                Greenfoot.setWorld(new levelThree());
+            }else if (((ZeeWeeld)getWorld()).level == 3){
+                Greenfoot.setWorld(new levelFour());
+            }else if (((ZeeWeeld)getWorld()).level == 4){
+                Greenfoot.setWorld(new levelFive());
+            }else if (((ZeeWeeld)getWorld()).level == 5){
+                Greenfoot.setWorld(new levelSix());
             }
         }
     }
