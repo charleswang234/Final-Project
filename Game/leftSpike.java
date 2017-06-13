@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class leftSpike here.
+ * Actor for the left spike 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang 
+ * @version June 2017
  */
 public class leftSpike extends Actor
 {

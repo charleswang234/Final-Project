@@ -1,13 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class blueBlock2 here.
+ * Block used for left and right character collisions
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class blueBlock2 extends Actor
 {
+    /**
+     * Sets colour of the block based on the level of the game
+     * There are 6 levels in total
+     */
     public blueBlock2(){
         if (((ZeeWeeld)getWorld()).level == 1){
             setImage ("green block.jpg");

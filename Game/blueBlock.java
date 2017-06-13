@@ -1,13 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class blueBlock here.
+ * Block used for up and down character collisions
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class blueBlock extends Actor
 {
+    /**
+     * Sets colour of the block based on the level of the game
+     * There are 6 levels in total
+     */
     public blueBlock(){
         if (((ZeeWeeld)getWorld()).level == 1){
             setImage ("green block.jpg");

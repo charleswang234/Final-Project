@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class startPipe here.
+ * Pipe that the actor starts in when the a new world is created. Also where the actor respawns after failing to complete the level
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class startPipe extends Actor
 {

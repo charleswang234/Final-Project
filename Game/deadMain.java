@@ -1,20 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class deadMain here.
+ * Actor for the dead body of the character
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class deadMain extends Actor
 {   
-    private int deathTime = 0;
+    
+    private int deathTime = 0; //Instance variable that measures how long the dead body will remain
     public deadMain(){
-        deathTime = ((ZeeWeeld)getWorld()).time;
+        deathTime = ((ZeeWeeld)getWorld()).time; //sets the death time to the current amount of time played
     }
 
+    /**
+     * Method that will remove the dead body after a specified time
+     */
     public void act(){
-        if (((ZeeWeeld)getWorld()).time >= deathTime + 2){
+        if (((ZeeWeeld)getWorld()).time >= deathTime + 4){
             ((ZeeWeeld)getWorld()).removeObject(this);
         }
     }

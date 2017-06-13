@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class door here.
+ * Actor class for the door, which is needed to remove to complete each level of This is the Only Level Reboot
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wag and Victor Huang
+ * @version June 2017
  */
 public class door extends Actor
 {

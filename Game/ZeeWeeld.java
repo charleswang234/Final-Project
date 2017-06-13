@@ -1,22 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ZeeWeeld here.
+ * Super Class of all of the levels for This is the Only Level Reboot
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class ZeeWeeld extends World
 {
-    static int level = 0;
-    static int time = 0;
-    static int deaths = 0;
-    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40);
-    Label deathCount = new Label("Deaths: " + deaths, 20);
-    door door = new door();
-    doorUnlock unlockDoor = new doorUnlock();
+    static int level = 0; //Level of the world
+    static int time = 0; //Amount of time played
+    static int deaths = 0; //Counts the number of deaths
+    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using labels
+    Label deathCount = new Label("Deaths: " + deaths, 20); //Displays the amount of deaths onto the screen using labels
+    door door = new door(); //Creates an instance of door
+    doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of doorUnlock
 
-    Timer timeCount = new Timer();
+    Timer timeCount = new Timer(); //Creates an instance of Timer
 
     /**
      * Constructor for objects of class ZeeWeeld.

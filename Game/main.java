@@ -1,23 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class main here.
+ * Actor class for the main character of the game. Includes object collision and movement as well as some removing/adding objects.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class main extends Actor
 {
 
-    //game character is 30 X 30 and every block is 30 by  
+    //Game character is 30 X 30
 
-    private int speedUpDown = 0; //IN PROGRESS
-    private boolean fall = false; //IN PROGRESS
-    private int speedRight = 5; //speed of moving right
-    private int speedLeft = -5; //speed of moving left
-    private int changeX; //changing getX() indirectly first
-    private int changeY; //changing getY() indirectly first
-    private boolean jumping = false; //checks if touching block from top so main character can jump
+    private int speedUpDown = 0; //Speed that the character falls or rises at
+    private boolean fall = false; //Checks if character is falling 
+    private int speedRight = 5; //Speed of moving right
+    private int speedLeft = -5; //Speed of moving left
+    private int changeX; //Changing getX() indirectly first
+    private int changeY; //Changing getY() indirectly first
+    private boolean jumping = false; //Checks if touching block from top so main character can jump
 
     /**
      * Act - do whatever the main wants to do. This method is called whenever
@@ -26,18 +26,14 @@ public class main extends Actor
     public void act() 
     {
         copy();
-
         objectCollision();
         doorCollision();    
         move();
-
         fall(); 
         jump(); 
-
         setLocation(changeX, changeY);
         spikeCollision();
         doorUnlockCollision();
-
         belowDeath();
     }    
 
@@ -57,8 +53,8 @@ public class main extends Actor
      * object collision with blocks
      */
     private void objectCollision(){
-        Actor blocksUpDown = getOneIntersectingObject(blueBlock.class);
-        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class);
+        Actor blocksUpDown = getOneIntersectingObject(blueBlock.class); //Intersecting on top or bottom
+        Actor blocksLeftRight = getOneIntersectingObject(blueBlock2.class); //Intersecting on left and right side
 
         if (blocksUpDown != null){
             if (changeX + 30 > blocksUpDown.getX() && changeX - 30 < blocksUpDown.getX() && changeY + 18 < blocksUpDown.getY()){
@@ -92,26 +88,33 @@ public class main extends Actor
         }
     }
 
+    /**
+     * Object collision with spikes 
+     */
     private void spikeCollision(){
-        Actor spikeBot = getOneIntersectingObject(botSpike.class);
-        Actor spikeRight = getOneIntersectingObject(rightSpike.class);
-        Actor spikeTop = getOneIntersectingObject(topSpike.class);
-        Actor spikeLeft = getOneIntersectingObject(leftSpike.class);
+        Actor spikeBot = getOneIntersectingObject(botSpike.class); //Bottom spike
+        Actor spikeRight = getOneIntersectingObject(rightSpike.class); //Right spike
+        Actor spikeTop = getOneIntersectingObject(topSpike.class); //Top spike
+        Actor spikeLeft = getOneIntersectingObject(leftSpike.class); //Left spike
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
-            setLocation(135,135);
-            ((ZeeWeeld)getWorld()).deaths += 1;
-            ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY);
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
+            setLocation(135,135); //Respawns the character at the start pipe
+            ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
+            ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY); // Replaces character with a dead body
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
         }
     }   
 
+    /**
+     * If character accidentally falls below given area. Character will respawn at start pipe
+     */
     private void belowDeath(){
         if (changeY > 465){
             Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
             setLocation(135,135);
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);
-             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195);
+            ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
         }
     }
 
@@ -122,11 +125,14 @@ public class main extends Actor
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
         Actor buttonPressed = getOneIntersectingObject(buttonPressed.class);
         if (unlockDoor != null){
-            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door);
-            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).unlockDoor);
+            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //Removes the button
+            ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).unlockDoor); //removes the door 
         }
     }   
 
+    /**
+     * Collision with the door, not allowing the character to reach its final destination
+     */
     private void doorCollision(){
         Actor door = getOneIntersectingObject(door.class);
         if (door != null){
@@ -139,7 +145,7 @@ public class main extends Actor
 
     /**
      * Method to change the coordinates of the main character indirectly
-     * and then apply it directly at the very end of act
+     * and then apply it directly in act
      */
     private void copy(){
         changeX = getX();
@@ -147,7 +153,7 @@ public class main extends Actor
     }
 
     /**
-     * Falling method  IN PROGRESS
+     * Falling method for the character
      */
     private void fall(){ 
         if (fall){
@@ -161,8 +167,7 @@ public class main extends Actor
     }
 
     /**
-     * create jump and jump delay and can only jump when on the block
-     * touching the block, unable to moving certain areas
+     * Create jump and jump delay and can only jump when on the block touching the block
      */
     private void jump(){
         if (jumping && Greenfoot.isKeyDown("up")){
