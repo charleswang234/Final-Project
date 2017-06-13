@@ -23,10 +23,5 @@ public class menu extends World
         addObject(new continueButton(),675,260);
         addObject(new howToPlayButton(),675,350);
         addObject(new creditsButton(),675,440);
-        
-        //Resets the game's variables
-        ZeeWeeld.level = 0;
-        ZeeWeeld.deaths = 0;
-        ZeeWeeld.time = 0;
     }
 }
