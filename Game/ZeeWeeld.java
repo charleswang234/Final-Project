@@ -15,6 +15,7 @@ public class ZeeWeeld extends World
     Label deathCount = new Label("Deaths: " + deaths, 20); //Displays the amount of deaths onto the screen using labels
     door door = new door(); //Creates an instance of door
     doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of doorUnlock
+    whiteBackground backgroundWhite = new whiteBackground();
 
     Timer timeCount = new Timer(); //Creates an instance of Timer
 
@@ -146,6 +147,10 @@ public class ZeeWeeld extends World
         addObject(unlockDoor,435,195);
         addObject(door,735,390);
 
+        if (level == 4){
+            addObject(backgroundWhite,420,240);
+        }
+        
         addObject(new main(),135,155);
         addObject(new startPipe(),135,135);
         addObject(new endPipe(),795,405);

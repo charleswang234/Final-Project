@@ -145,10 +145,12 @@ public class main extends Actor
             setLocation(135,135); //Respawns the character at the start pipe
             ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY); // Replaces character with a dead body
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);  //Readds the door 
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Readds the button
             if (((ZeeWeeld)getWorld()).level == 2){
                 numberOfJumps = 1;
+            }else if (((ZeeWeeld)getWorld()).level == 4){
+                ((ZeeWeeld)getWorld()).door.getImage().setTransparency(0);
             }
         }
     }   
@@ -165,6 +167,8 @@ public class main extends Actor
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Readds the button
             if (((ZeeWeeld)getWorld()).level == 2){
                 numberOfJumps = 1;
+            }else if (((ZeeWeeld)getWorld()).level == 4){
+                ((ZeeWeeld)getWorld()).door.getImage().setTransparency(0);
             }
         }
     }
