@@ -25,12 +25,12 @@ public class main extends Actor
     private int numberOfJumps; //changing the number of jumps
 
     public main(){
-        if (((ZeeWeeld)getWorld()).level == 1){
+        if (ZeeWeeld.level == 1){
             speed = 5;
             collisionSetX = 24;
             numberOfJumps = 2;
         }
-        else if (((ZeeWeeld)getWorld()).level == 2){
+        else if (ZeeWeeld.level == 2){
             speed = 8;
             collisionSetX = 21;
             numberOfJumps = 1;
@@ -39,15 +39,15 @@ public class main extends Actor
             speed = -5;
             collisionSetX = 24;
             numberOfJumps = 2;
-        }else if (((ZeeWeeld)getWorld()).level == 4){
+        }else if (ZeeWeeld.level == 4){
             speed = 5;
             collisionSetX = 24;
             numberOfJumps = 2;
-        }else if (((ZeeWeeld)getWorld()).level == 5){
+        }else if (ZeeWeeld.level == 5){
             speed = 5;
             collisionSetX = 24;
             numberOfJumps = 2;
-        }else if (((ZeeWeeld)getWorld()).level == 6){
+        }else if (ZeeWeeld.level == 6){
             speed = 5;
             collisionSetX = 24;
             numberOfJumps = 2;
@@ -110,14 +110,14 @@ public class main extends Actor
 
         if (blocksLeftRight != null){
             if (changeX + collisionSetX < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
-                if (((ZeeWeeld)getWorld()).level == 3){
+                if (ZeeWeeld.level == 3){
                     speedLeft = 0;
                 }else{
                     speedRight = 0;
                 }
                 changeX = blocksLeftRight.getX() - 29;
             }else if (changeX - collisionSetX > blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
-                if (((ZeeWeeld)getWorld()).level == 3){
+                if (ZeeWeeld.level == 3){
                     speedRight = 0;
                 }else{
                     speedLeft = 0;
@@ -143,13 +143,13 @@ public class main extends Actor
         Actor spikeLeft = getOneIntersectingObject(leftSpike.class); //Left spike
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135); //Respawns the character at the start pipe
-            ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
+            ZeeWeeld.deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY); // Replaces character with a dead body
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);  //Readds the door 
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Readds the button
-            if (((ZeeWeeld)getWorld()).level == 2){
+            if (ZeeWeeld.level == 2){
                 numberOfJumps = 1;
-            }else if (((ZeeWeeld)getWorld()).level == 4){
+            }else if (ZeeWeeld.level == 4){
                 ((ZeeWeeld)getWorld()).door.getImage().setTransparency(0);
             }
         }
@@ -162,12 +162,12 @@ public class main extends Actor
         if (changeY > 465){
             Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
             setLocation(135,135);
-            ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
+            ZeeWeeld.deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Readds the button
-            if (((ZeeWeeld)getWorld()).level == 2){
+            if (ZeeWeeld.level == 2){
                 numberOfJumps = 1;
-            }else if (((ZeeWeeld)getWorld()).level == 4){
+            }else if (ZeeWeeld.level == 4){
                 ((ZeeWeeld)getWorld()).door.getImage().setTransparency(0);
             }
         }
@@ -204,15 +204,15 @@ public class main extends Actor
     private void endPipeCollision(){
         Actor endPipe = getOneIntersectingObject(endPipe.class);
         if (endPipe != null && changeX + 0 > endPipe.getX()){
-            if (((ZeeWeeld)getWorld()).level == 1){
+            if (ZeeWeeld.level == 1){
                 Greenfoot.setWorld(new levelTwo());
-            }else if (((ZeeWeeld)getWorld()).level == 2){
+            }else if (ZeeWeeld.level == 2){
                 Greenfoot.setWorld(new levelThree());
-            }else if (((ZeeWeeld)getWorld()).level == 3){
+            }else if (ZeeWeeld.level == 3){
                 Greenfoot.setWorld(new levelFour());
-            }else if (((ZeeWeeld)getWorld()).level == 4){
+            }else if (ZeeWeeld.level == 4){
                 Greenfoot.setWorld(new levelFive());
-            }else if (((ZeeWeeld)getWorld()).level == 5){
+            }else if (ZeeWeeld.level == 5){
                 Greenfoot.setWorld(new levelSix());
             }
         }

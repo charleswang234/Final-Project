@@ -11,7 +11,8 @@ public class ZeeWeeld extends World
     static int level = 0; //Level of the world
     static int time = 0; //Amount of time played
     static int deaths = 0; //Counts the number of deaths
-    Label gameTime = new Label("Time: " + time  /60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using labels
+    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using label
+
     Label deathCount = new Label("Deaths: " + deaths, 20); //Displays the amount of deaths onto the screen using labels
     door door = new door(); //Creates an instance of door
     doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of doorUnlock
@@ -27,11 +28,10 @@ public class ZeeWeeld extends World
      */
     public ZeeWeeld(int num)
     {    
-        super(840, 600, 1, true); 
+        super(840, 600, 1, true);
         level = num;
         levelInitializer();
     }
-
     /**These 2D arrays map out the objects in the game. 
      * Values of 1 indicate that there is a hitbox in the spot in the world.
      * The world is laid out on a 28 * 16 grid.
@@ -150,11 +150,28 @@ public class ZeeWeeld extends World
         if (level == 4){
             addObject(backgroundWhite,420,240);
         }
-        
+
         addObject(new main(),135,155);
         addObject(new startPipe(),135,135);
         addObject(new endPipe(),795,405);
-
         addObject(gameTime,700,550);
+        
+        //Sets the inital time
+        if(ZeeWeeld.time/60 < 10){ //Checks if time is less than 10 minutes
+                if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute
+                    gameTime.setValue("Time: 0" + ZeeWeeld.time/60 + ":0" + ZeeWeeld.time%60);
+                }
+                else{
+                    gameTime.setValue("Time: 0" + ZeeWeeld.time/60 + ":" + ZeeWeeld.time%60);
+                }
+            }
+            else{
+                if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute
+                    gameTime.setValue("Time: " + ZeeWeeld.time/60 + ":0" + ZeeWeeld.time%60);
+                }
+                else{
+                    gameTime.setValue("Time: " + ZeeWeeld.time/60 + ":" + ZeeWeeld.time%60); 
+                }
+            }
     }
 }

@@ -13,6 +13,7 @@ public class blueBlock extends Actor
      * There are 6 levels in total
      */
     public blueBlock(){
-            setImage (((ZeeWeeld)getWorld()).levelColour.get(((ZeeWeeld)getWorld()).level));
+        setImage (((ZeeWeeld)getWorld()).levelColour.get(ZeeWeeld.level));
     }
 }
+

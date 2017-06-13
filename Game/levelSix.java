@@ -17,4 +17,7 @@ public class levelSix extends ZeeWeeld
         super(6);
         prepare();
     }
+
+    public void act(){
+    }
 }
