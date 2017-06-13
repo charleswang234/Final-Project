@@ -151,7 +151,10 @@ public class main extends Actor
     private void endPipeCollision(){
         Actor endPipe = getOneIntersectingObject(endPipe.class);
         if (endPipe != null){
-             Greenfoot.setWorld(new levelTwo());
+            if (((ZeeWeeld)getWorld()).level == 1){
+
+                Greenfoot.setWorld(new levelTwo());
+            }
         }
     }
 
