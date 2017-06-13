@@ -11,7 +11,7 @@ public class ZeeWeeld extends World
     static int level = 0; //Level of the world
     static int time = 0; //Amount of time played
     static int deaths = 0; //Counts the number of deaths
-    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using labels
+    Label gameTime = new Label("Time: " + time  /60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using labels
     Label deathCount = new Label("Deaths: " + deaths, 20); //Displays the amount of deaths onto the screen using labels
     door door = new door(); //Creates an instance of door
     doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of doorUnlock

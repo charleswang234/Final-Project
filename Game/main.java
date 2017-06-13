@@ -114,7 +114,7 @@ public class main extends Actor
             setLocation(135,135);
             ((ZeeWeeld)getWorld()).deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
-             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).unlockDoor,435,195); //Readds the button
         }
     }
 
@@ -141,6 +141,13 @@ public class main extends Actor
                 changeX = door.getX() - 29;
             }
         }
+    }
+
+    /**
+     * Collision with the end pipe, sets a new world if possible
+     */
+    private void endPipeCollision(){
+
     }
 
     /**

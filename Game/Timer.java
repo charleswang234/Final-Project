@@ -16,10 +16,10 @@ public class Timer extends Actor
     public void act() 
     {
         count++; //Adds one every time act is gone through
-        if (count == 60){
-            ((ZeeWeeld)getWorld()).time += 1; //increases the time by one second
+        if (count == 60){ //FPS is 60 for act
+            ((ZeeWeeld)getWorld()).time += 1; //Increases the time by one second
             count = 0; //Resets the count
-            ((ZeeWeeld)getWorld()).gameTime.setValue("Time: " + ((ZeeWeeld)getWorld()).time/60 + ":" + ((ZeeWeeld)getWorld()).time%60);
+            ((ZeeWeeld)getWorld()).gameTime.setValue("Time: " + ((ZeeWeeld)getWorld()).time/60 + ":" + ((ZeeWeeld)getWorld()).time%60); //Displays the time played
         }
     }    
 }
