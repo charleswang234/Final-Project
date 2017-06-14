@@ -19,7 +19,7 @@ public class levelSix extends ZeeWeeld
         prepare();
     }
 
-    public void act(){
+    public void act(){        
         key = Greenfoot.getKey();//Checks the last key pressed
 
         //Gets the word you need to type and the word you have currently typed

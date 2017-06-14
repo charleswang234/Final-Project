@@ -24,6 +24,6 @@ public class menu extends World
         addObject(new howToPlayButton(),675,350);
         addObject(new creditsButton(),675,440);
         ZeeWeeld.music.setVolume(88);
-        ZeeWeeld.music.playLoop();    
+        ZeeWeeld.music.playLoop();
     }
 }

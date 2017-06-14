@@ -17,5 +17,4 @@ public class levelFour extends ZeeWeeld
         super(4);
         prepare();
     }
-
 }

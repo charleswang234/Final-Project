@@ -33,7 +33,7 @@ public class ZeeWeeld extends World
     static boolean trollingTrue = false;
     static boolean gameWin = false;
 
-    static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.mp3");
+    static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.wav");
 
     returnMenu menuReturn = new returnMenu();
 
@@ -46,7 +46,6 @@ public class ZeeWeeld extends World
         super(840, 600, 1, true);
         level = num;
         levelInitializer();
-
     }
     /**These 2D arrays map out the objects in the game. 
      * Values of 1 indicate that there is a hitbox in the spot in the world.
@@ -121,9 +120,7 @@ public class ZeeWeeld extends World
         levelColour.put(6,"cyan block.jpg");
     }
 
-    public void prepare(){
-        music.playLoop();   
-
+    public void prepare(){        
         addObject(timeCount,135,135);
 
         //The up and down hitboxes

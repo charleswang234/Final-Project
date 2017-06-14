@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Jun 13 21:10:50 EDT 2017
+#Tue Jun 13 22:21:31 EDT 2017
 target24.type=ClassTarget
 class.leftSpike.image=spike 2.png
 target16.name=creditsButton
@@ -17,6 +17,7 @@ dependency79.to=buttonPressed
 dependency104.type=UsesDependency
 target34.showInterface=false
 dependency46.type=UsesDependency
+class.panicButton.image=panic.jpg
 dependency98.type=UsesDependency
 dependency21.type=UsesDependency
 dependency131.type=UsesDependency
@@ -256,6 +257,7 @@ class.deathCount.superclass=greenfoot.Actor
 class.door.image=door.png
 target16.showInterface=false
 dependency2.to=blueBlock2
+class.panicButton.superclass=greenfoot.Actor
 dependency90.type=UsesDependency
 class.whiteBackground.superclass=greenfoot.Actor
 dependency60.to=endPipe
@@ -325,6 +327,7 @@ dependency122.type=UsesDependency
 dependency64.type=UsesDependency
 dependency91.type=UsesDependency
 dependency84.to=blueBlock
+class.returnMenu.image=MenuButton2.jpg
 readme.width=47
 dependency88.from=main
 dependency11.from=ZeeWeeld
@@ -371,6 +374,7 @@ dependency73.to=blueBlock
 dependency53.type=UsesDependency
 target16.type=ClassTarget
 dependency9.to=Label
+class.toggleSound.image=toggle sound.jpg
 dependency80.type=UsesDependency
 target35.name=howToPlayButton
 dependency108.from=menu
@@ -472,6 +476,7 @@ target4.typeParameters=
 class.door.superclass=greenfoot.Actor
 target18.typeParameters=
 target8.y=490
+class.toggleSound.superclass=greenfoot.Actor
 target8.x=100
 dependency86.to=levelTwo
 dependency13.from=levelFour
