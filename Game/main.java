@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class main extends Actor
 {
     //Game character is 30 X 30
-    
+
     private int speedUpDown = 0; //Speed that the character falls or rises at
     private boolean fall = false; //Checks if character is falling 
     private int speedRight = 5; //Speed of moving right
@@ -50,6 +50,18 @@ public class main extends Actor
             speed = 5;
             collisionSetX = 24;
             numberOfJumps = 2;
+        }else if (ZeeWeeld.level == 7){ //Mid keyboard in this level
+            speed = 5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
+        }else if (ZeeWeeld.level == 8){ //no hitbox door in this level
+            speed = 5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
+        }else if (ZeeWeeld.level == 9){ //no hitbox door in this level
+            speed = 5;
+            collisionSetX = 24;
+            numberOfJumps = 2;
         }
 
     }
@@ -78,11 +90,23 @@ public class main extends Actor
      * Allows main character to move left and right
      */
     private void move(){
-        if (Greenfoot.isKeyDown("right")){
-            changeX += speedRight;
+        if (ZeeWeeld.level == 7){
+            if (Greenfoot.isKeyDown("h")){
+                changeX += speedRight;
+            }
+        }else{
+            if (Greenfoot.isKeyDown("right")){
+                changeX += speedRight;
+            }
         }
-        if (Greenfoot.isKeyDown("left")){
-            changeX += speedLeft;
+        if (ZeeWeeld.level == 7){
+            if (Greenfoot.isKeyDown("f")){
+                changeX += speedLeft;
+            }
+        }else{
+            if (Greenfoot.isKeyDown("left")){
+                changeX += speedLeft;
+            }
         }
     }
 
@@ -107,7 +131,7 @@ public class main extends Actor
             fall = true;
             jumping = false;
         }
-        
+
         if (blocksLeftRight != null){
             if (changeX + collisionSetX < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 if (ZeeWeeld.level == 3){ //movement is inversed and collision is inversed for level three
@@ -141,13 +165,17 @@ public class main extends Actor
         Actor spikeRight = getOneIntersectingObject(rightSpike.class); //Right spike
         Actor spikeTop = getOneIntersectingObject(topSpike.class); //Top spike
         Actor spikeLeft = getOneIntersectingObject(leftSpike.class); //Left spike
-        
+
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135); //Respawns the character at the start pipe
             ZeeWeeld.deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths); //Updates death count
             ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY); // Replaces character with a dead body
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);  //Readds the door 
+            if (ZeeWeeld.level == 9){
+                ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //Removes the door 
+            }else{
+                ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            }
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Sets the button to opaque
             if (ZeeWeeld.level == 2){ //resets and allows the character to jump once if it is level 2
                 numberOfJumps = 1;
@@ -165,7 +193,11 @@ public class main extends Actor
             setLocation(135,135); //Respawns the character at the start pipe
             ZeeWeeld.deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths); //Updates death count
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            if (ZeeWeeld.level == 9){
+                ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //Removes the door 
+            }else{
+                ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            }
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Sets the button to opaque
             if (ZeeWeeld.level == 2){ //resets and allows the character to jump once if it is level 2
                 numberOfJumps = 1;
@@ -174,7 +206,7 @@ public class main extends Actor
             }
         }
     }
-    
+
     /**
      * If player clicks the panic button. Character will respawn at start pipe
      */
@@ -183,7 +215,11 @@ public class main extends Actor
             setLocation(135,135); //Respawns the character at the start pipe
             ZeeWeeld.deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths); //Updates death count
-            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            if (ZeeWeeld.level == 9){
+                ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //Remove the door 
+            }else{
+                ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            }
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Sets the button to opaque
             if (ZeeWeeld.level == 2){ //resets and allows the character to jump once if it is level 2
                 numberOfJumps = 1;
@@ -192,16 +228,18 @@ public class main extends Actor
             }
         }
     }
-    
+
     /**
      * Collision for unlocking door
      */
     private void doorUnlockCollision(){
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class); //Button needed to be pressed
-        
+
         if (unlockDoor != null){ //If touching the button
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(0); ////Sets the button to transparent
-            if (ZeeWeeld.level != 5){
+            if (ZeeWeeld.level == 9){
+                ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //readds the door
+            }else if (ZeeWeeld.level != 5 && ZeeWeeld.level != 8){
                 ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //removes the door
             }
         }
@@ -214,12 +252,14 @@ public class main extends Actor
      * Collision with the door, not allowing the character to reach its final destination
      */
     private void doorCollision(){
-        Actor door = getOneIntersectingObject(door.class); //the door
-        
-        if (door != null){
-            if (changeX + collisionSetX < door.getX() && changeY + 58 >= door.getY() && changeY - 58 <= door.getY()){
-                speedRight = 0;
-                changeX = door.getX() - 29;
+        if (!(ZeeWeeld.level == 8)){
+            Actor door = getOneIntersectingObject(door.class); //the door
+
+            if (door != null){
+                if (changeX + collisionSetX < door.getX() && changeY + 58 >= door.getY() && changeY - 58 <= door.getY()){
+                    speedRight = 0;
+                    changeX = door.getX() - 29;
+                }
             }
         }
     }
@@ -241,7 +281,11 @@ public class main extends Actor
                 Greenfoot.setWorld(new levelFive()); //Sets the level 5 world
             }else if (ZeeWeeld.level == 5){
                 Greenfoot.setWorld(new levelSix()); //Sets the level 6 world
-            }else if (ZeeWeeld.level == 6){
+            }else if (ZeeWeeld.level == 7){
+                Greenfoot.setWorld(new levelEight()); //Sets the level 8 world
+            }else if (ZeeWeeld.level == 8){
+                Greenfoot.setWorld(new levelNine()); //Sets the level 9 world
+            }else if (ZeeWeeld.level == 9){
                 Greenfoot.setWorld(new winScreen()); //Sets the winScreen world
             }
         }
@@ -274,14 +318,20 @@ public class main extends Actor
      * Jumping method for the character
      */
     private void jump(){
-        if (jumping && Greenfoot.isKeyDown("up") && (numberOfJumps == 2 || numberOfJumps == 1)){ //if numberOfJumps is 2, character will have infinite jumps
-            speedUpDown = -15; //jump speed
-            fall = true; //allows the character to fall
-            changeY += speedUpDown;
-            if (numberOfJumps == 1){ //if number of jumps is 1, character will not be able to jump again 
-                numberOfJumps = 0;
+        if (jumping){
+            if (ZeeWeeld.level == 7 && Greenfoot.isKeyDown("t")){
+                speedUpDown = -15; //jump speed
+                fall = true; //allows the character to fall
+                changeY += speedUpDown;
+            }
+            else if (ZeeWeeld.level != 7 && Greenfoot.isKeyDown("up") && (numberOfJumps == 2 || numberOfJumps == 1)){ //if numberOfJumps is 2, character will have infinite jumps
+                speedUpDown = -15; //jump speed
+                fall = true; //allows the character to fall
+                changeY += speedUpDown;
+                if (numberOfJumps == 1){ //if number of jumps is 1, character will not be able to jump again 
+                    numberOfJumps = 0;
+                }
             }
         }
     }
-
 }
