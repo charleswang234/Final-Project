@@ -38,7 +38,7 @@ public class ZeeWeeld extends World
     static boolean gameWin = false; //Boolean to check if player won the game and was brought to the winScreen
 
     static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.wav"); //Music for the game
-
+    static boolean musicUserControl = false; //Checks if the user paused the music or not
     /**
      * Constructor for objects of class ZeeWeeld.
      * 
@@ -168,7 +168,7 @@ public class ZeeWeeld extends World
         addObject(new buttonPressed(),435,195); //what the button looks like after it is pressed by the character
         addObject(unlockDoor,435,195); //Unpressed button 
 
-        if (!(level == 9)){
+        if (level != 9){
             addObject(door,735,390); //Adds the door 
         }
 

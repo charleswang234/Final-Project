@@ -217,7 +217,7 @@ public class main extends Actor
             ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths); //Updates death count
             if (ZeeWeeld.level == 9){
                 ((ZeeWeeld)getWorld()).removeObject(((ZeeWeeld)getWorld()).door); //Remove the door 
-            }else{
+            }else if (ZeeWeeld.level != 5){
                 ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
             }
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Sets the button to opaque

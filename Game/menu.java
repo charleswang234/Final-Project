@@ -25,6 +25,11 @@ public class menu extends World
         addObject(new howToPlayButton(),675,350); //Image to access to the howToPlay world
         addObject(new creditsButton(),675,440); //Image to access the credits world
         ZeeWeeld.music.setVolume(88); //sets the music volume
-        ZeeWeeld.music.playLoop(); //loops the music
+        if (ZeeWeeld.musicUserControl){ //Checks if music is playing
+            ZeeWeeld.music.pause(); //pauses the music
+        }
+        else{
+            ZeeWeeld.music.playLoop(); //resumes the music
+        }
     }
 }
