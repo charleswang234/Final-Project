@@ -10,9 +10,9 @@ AUTHORS: Charles Wang and Victor Huang
 
 DATA STRUCTURES USED: HashMaps, Queues, ArrayLists, and 2D Arrays
 
-- A HashMap was used in the ZeeWeeld World class
-- An ArrayList was used in the Words Actor class
-- A Queue were used in the Words Actor class 
-- 2D Arrays were used in the ZeeWeeld World class
+- A HashMap was used in the ZeeWeeld World class to set specific colours of blocks depending on the level.
+- An ArrayList was used in the Words Actor class to hold onto the words read from the text files
+- A Queue was used in the Words Actor class to hold randomly selected words taken from the ArrayList
+- 2D Arrays were used in the ZeeWeeld World class to layout the grid of the "level" worlds
 
  
