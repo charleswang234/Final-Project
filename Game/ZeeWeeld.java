@@ -28,6 +28,9 @@ public class ZeeWeeld extends World
     whiteBackground backgroundWhite = new whiteBackground(); //Creates an instance of the whiteBackground class
     Timer timeCount = new Timer(); //Creates an instance of Timer
     main2 character = new main2(); //Creates an instance of the main2 class needed for level 6
+    returnMenu menuReturn = new returnMenu(); //Creates an instance of the returnMenu class
+    panicButton restart = new panicButton(); //Creates an instance of the panic button used to restart the level
+    toggleSound musicOnOff = new toggleSound(); //Creates an instance of the music on/off button 
 
     static HashMap<Integer,String> levelColour = new HashMap<Integer,String>(); //HashMap used to set the colour of the blocks based on the level of the game
 
@@ -36,7 +39,6 @@ public class ZeeWeeld extends World
 
     static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.wav"); //Music for the game
 
-    returnMenu menuReturn = new returnMenu(); //Creates an instance of the returnMenu class
 
     /**
      * Constructor for objects of class ZeeWeeld.
@@ -54,6 +56,7 @@ public class ZeeWeeld extends World
      * The world is laid out on a 28 * 16 grid.
      * The first 2D array maps out the up and down platform/unit collision boxes.
      * The second 2D array maps out the left and right platform/unit collision boxes.
+     * The third 2D array maps out all the spikes on the map.
      */
     int [][] upMap = {
             {0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,0,1,1,0,0,0,0,0},
@@ -167,7 +170,6 @@ public class ZeeWeeld extends World
         if (level == 4){
             addObject(backgroundWhite,420,240); //Adds a white background if level 4
         }
-
         if(level == 6){
             addObject(character,135,255); //Adds an unmovable character if level 6
             addObject(words,135,135); //Adds words greenfoot image
@@ -182,11 +184,13 @@ public class ZeeWeeld extends World
  
         addObject(new startPipe(),135,135); //Adds the start pipe onto the screen
         addObject(new endPipe(),795,405); //Adds the end pipe onto the screen
-        addObject(gameTime,700,550); //Adds the game time onto the screen
-        addObject(deathCount,700,575); //Adds the death count onto the screen
+        addObject(gameTime,700,525); //Adds the game time onto the screen
+        addObject(deathCount,700,550); //Adds the death count onto the screen
 
-        addObject(menuReturn,40, 500); //Adds the return menu onto the screen
-
+        addObject(menuReturn,90, 585); //Adds the return menu button onto the screen
+        addObject(restart,240, 585); //Adds the panic button onto the screen
+        addObject(musicOnOff,390, 585); //Adds the music on/off button onto the screen
+        
         //Sets the inital time
         if(ZeeWeeld.time/60 < 10){ //Checks if time is less than 10 minutes
             if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute

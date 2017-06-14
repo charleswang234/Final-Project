@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class panicButton here.
+ * Image allowed for mouse click to restart the stage
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class panicButton extends Actor
 {
@@ -14,6 +14,5 @@ public class panicButton extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+    }
 }

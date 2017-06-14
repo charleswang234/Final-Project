@@ -14,6 +14,13 @@ public class toggleSound extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        if (Greenfoot.mouseClicked(this)){
+            if (ZeeWeeld.music.isPlaying()){ //Checks if music is playing
+                ZeeWeeld.music.pause(); //pauses the music
+            }
+            else{
+                ZeeWeeld.music.playLoop(); //resumes the music
+            }
+        }    
+    }
 }

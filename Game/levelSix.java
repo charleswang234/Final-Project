@@ -19,7 +19,9 @@ public class levelSix extends ZeeWeeld
         prepare();
     }
 
-    public void act(){        
+    public void act(){
+        panic();//Checks if the panic button was pressed
+
         key = Greenfoot.getKey();//Checks the last key pressed
 
         //Gets the word you need to type and the word you have currently typed
@@ -41,7 +43,7 @@ public class levelSix extends ZeeWeeld
                 playerInput.setValue(playerInput.getLabel() + " "); //Updates the word the player has typed
                 count++; //Updates the amount of letters typed so far
             }
-            //Ensures that score is not deducted for moving Mario or when you restart the game
+            //Ensures that character does not die when trying to use the arrow keys
             else if (key.equals("left") || key.equals("right") || key.equals("up") || key.equals("down")){
             }
             else{
@@ -86,13 +88,26 @@ public class levelSix extends ZeeWeeld
         else if (correct == 8){
             Greenfoot.setWorld(new winScreen());
         }
-        
+
         //Procedure to get a new word
         String oldWord = currentWord.getLabel();
         words.wordQueue.enqueue(oldWord); //Puts the word back into the queue
         currentWord.setValue(words.wordQueue.dequeue()); //Gets a new word
         playerInput.setValue(""); //Clears the user input
-        deathCount.setValue("Deaths: " + deaths);//Updates death count
         count = 0; //restarts the number of letters typed
+    }
+    
+    /**
+     * If player clicks the panic button. Character will respawn at start pipe
+     */
+    private void panic(){
+        if (Greenfoot.mouseClicked(restart)){
+            deaths += 1; //Increases death by one if wrong letter typed
+            correct = 0; //Restarts the number of correct words
+            deathCount.setValue("Deaths: " + deaths);//Updates death count
+            character.setLocation(135,255); //Respawns the character at the start location of the screen
+            addObject(door,735,390);  //Readds the door 
+            unlockDoor.getImage().setTransparency(255);//Sets the button to opaque
+        }
     }
 }

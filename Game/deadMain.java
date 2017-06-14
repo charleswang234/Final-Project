@@ -21,7 +21,7 @@ public class deadMain extends Actor
         if (ZeeWeeld.time >= deathTime + 4){ //If past a given time (4 seconds), this object will be removed
             ((ZeeWeeld)getWorld()).removeObject(this);
         }
-        if (this.getImage().getTransparency() > 2){ //Slowly increases the transparency of the object until it is transparent
+        if (this.getImage().getTransparency() > 2){ //Slowly decreases the transparency of the object until it is transparent
             this.getImage().setTransparency(this.getImage().getTransparency() - 2);
         }
     }

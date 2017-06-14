@@ -8,9 +8,8 @@ import java.util.HashMap;
  */
 public class main extends Actor
 {
-
     //Game character is 30 X 30
-
+    
     private int speedUpDown = 0; //Speed that the character falls or rises at
     private boolean fall = false; //Checks if character is falling 
     private int speedRight = 5; //Speed of moving right
@@ -71,6 +70,7 @@ public class main extends Actor
         spikeCollision();
         doorUnlockCollision();
         belowDeath();
+        panic();
         endPipeCollision();
     }    
 
@@ -107,7 +107,7 @@ public class main extends Actor
             fall = true;
             jumping = false;
         }
-
+        
         if (blocksLeftRight != null){
             if (changeX + collisionSetX < blocksLeftRight.getX() && changeY + 28 >= blocksLeftRight.getY() && changeY - 28 <= blocksLeftRight.getY()){
                 if (ZeeWeeld.level == 3){ //movement is inversed and collision is inversed for level three
@@ -141,6 +141,7 @@ public class main extends Actor
         Actor spikeRight = getOneIntersectingObject(rightSpike.class); //Right spike
         Actor spikeTop = getOneIntersectingObject(topSpike.class); //Top spike
         Actor spikeLeft = getOneIntersectingObject(leftSpike.class); //Left spike
+        
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135); //Respawns the character at the start pipe
             ZeeWeeld.deaths += 1; //Increases the death count after death
@@ -161,7 +162,6 @@ public class main extends Actor
      */
     private void belowDeath(){
         if (changeY > 465){
-            Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
             setLocation(135,135); //Respawns the character at the start pipe
             ZeeWeeld.deaths += 1; //Increases the death count after death
             ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths); //Updates death count
@@ -174,13 +174,31 @@ public class main extends Actor
             }
         }
     }
-
+    
+    /**
+     * If player clicks the panic button. Character will respawn at start pipe
+     */
+    private void panic(){
+        if (Greenfoot.mouseClicked(((ZeeWeeld)getWorld()).restart)){
+            setLocation(135,135); //Respawns the character at the start pipe
+            ZeeWeeld.deaths += 1; //Increases the death count after death
+            ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths); //Updates death count
+            ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
+            ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Sets the button to opaque
+            if (ZeeWeeld.level == 2){ //resets and allows the character to jump once if it is level 2
+                numberOfJumps = 1;
+            }else if (ZeeWeeld.level == 4){ //Resets and makes the door tranparent again
+                ((ZeeWeeld)getWorld()).door.getImage().setTransparency(0);//Sets the door to transparent
+            }
+        }
+    }
+    
     /**
      * Collision for unlocking door
      */
     private void doorUnlockCollision(){
         Actor unlockDoor = getOneIntersectingObject(doorUnlock.class); //Button needed to be pressed
-
+        
         if (unlockDoor != null){ //If touching the button
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(0); ////Sets the button to transparent
             if (ZeeWeeld.level != 5){
@@ -197,6 +215,7 @@ public class main extends Actor
      */
     private void doorCollision(){
         Actor door = getOneIntersectingObject(door.class); //the door
+        
         if (door != null){
             if (changeX + collisionSetX < door.getX() && changeY + 58 >= door.getY() && changeY - 58 <= door.getY()){
                 speedRight = 0;
@@ -252,7 +271,7 @@ public class main extends Actor
     }
 
     /**
-     * Create jump and jump delay and can only jump when on the block touching the block
+     * Jumping method for the character
      */
     private void jump(){
         if (jumping && Greenfoot.isKeyDown("up") && (numberOfJumps == 2 || numberOfJumps == 1)){ //if numberOfJumps is 2, character will have infinite jumps
