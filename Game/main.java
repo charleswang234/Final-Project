@@ -144,6 +144,8 @@ public class main extends Actor
         if (spikeBot != null || spikeRight != null || spikeTop != null || spikeLeft != null){
             setLocation(135,135); //Respawns the character at the start pipe
             ZeeWeeld.deaths += 1; //Increases the death count after death
+            ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths);
+
             ((ZeeWeeld)getWorld()).addObject(new deadMain(),changeX,changeY); // Replaces character with a dead body
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390);  //Readds the door 
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Readds the button
@@ -163,6 +165,8 @@ public class main extends Actor
             Actor unlockDoor = getOneIntersectingObject(doorUnlock.class);
             setLocation(135,135);
             ZeeWeeld.deaths += 1; //Increases the death count after death
+            ((ZeeWeeld)getWorld()).deathCount.setValue("Deaths: " + ZeeWeeld.deaths);
+
             ((ZeeWeeld)getWorld()).addObject(((ZeeWeeld)getWorld()).door,735,390); //Readds the door 
             ((ZeeWeeld)getWorld()).unlockDoor.getImage().setTransparency(255);//Readds the button
             if (ZeeWeeld.level == 2){

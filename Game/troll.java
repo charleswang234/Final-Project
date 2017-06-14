@@ -15,7 +15,10 @@ public class troll extends Actor
     public void act() 
     {
         if (Greenfoot.mouseClicked(this)){
-            ZeeWeeld.trollingTrue = true;
+            if (ZeeWeeld.level == 5){
+                ZeeWeeld.trollingTrue = true;
+                Greenfoot.setWorld(new menu());
+            }
         }
     }    
 }
