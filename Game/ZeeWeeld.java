@@ -39,7 +39,6 @@ public class ZeeWeeld extends World
 
     static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.wav"); //Music for the game
 
-
     /**
      * Constructor for objects of class ZeeWeeld.
      * 
@@ -50,7 +49,7 @@ public class ZeeWeeld extends World
         level = num;
         levelInitializer();
     }
-    
+
     /**These 2D arrays map out the objects in the game. 
      * Values of 1 indicate that there is a hitbox in the spot in the world.
      * The world is laid out on a 28 * 16 grid.
@@ -122,6 +121,9 @@ public class ZeeWeeld extends World
         levelColour.put(4,"magenta block.jpg");
         levelColour.put(5,"red block.jpg");
         levelColour.put(6,"cyan block.jpg");
+        levelColour.put(7,"green block.jpg");
+        levelColour.put(8,"blue block.jpg");
+        levelColour.put(9,"yellow block.jpg");
     }
 
     public void prepare(){        
@@ -165,7 +167,10 @@ public class ZeeWeeld extends World
 
         addObject(new buttonPressed(),435,195); //what the button looks like after it is pressed by the character
         addObject(unlockDoor,435,195); //Unpressed button 
-        addObject(door,735,390); //Adds the door 
+
+        if (!(level == 9)){
+            addObject(door,735,390); //Adds the door 
+        }
 
         if (level == 4){
             addObject(backgroundWhite,420,240); //Adds a white background if level 4
@@ -181,7 +186,7 @@ public class ZeeWeeld extends World
         else{
             addObject(new main(),135,155); //Adds a movable character onto the screen for other levels
         }
- 
+
         addObject(new startPipe(),135,135); //Adds the start pipe onto the screen
         addObject(new endPipe(),795,405); //Adds the end pipe onto the screen
         addObject(gameTime,700,525); //Adds the game time onto the screen
@@ -190,7 +195,7 @@ public class ZeeWeeld extends World
         addObject(menuReturn,90, 585); //Adds the return menu button onto the screen
         addObject(restart,240, 585); //Adds the panic button onto the screen
         addObject(musicOnOff,390, 585); //Adds the music on/off button onto the screen
-        
+
         //Sets the inital time
         if(ZeeWeeld.time/60 < 10){ //Checks if time is less than 10 minutes
             if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute

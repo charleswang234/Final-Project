@@ -17,7 +17,7 @@ public class backMenuOne extends Actor
         if (Greenfoot.mouseClicked(this)){ //if mouseclicked
             Greenfoot.setWorld(new menu()); //sets it to the menu world
 
-            if (ZeeWeeld.level == 6 && ZeeWeeld.gameWin){ //resets the game if level 6 was reached and player has gone through the winScreen
+            if (ZeeWeeld.level == 9 && ZeeWeeld.gameWin){ //resets the game if level 6 was reached and player has gone through the winScreen
                 ZeeWeeld.level = 0; 
                 ZeeWeeld.time = 0;
                 ZeeWeeld.deaths = 0;

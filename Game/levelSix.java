@@ -86,7 +86,7 @@ public class levelSix extends ZeeWeeld
             character.setLocation(705,405);
         }
         else if (correct == 8){
-            Greenfoot.setWorld(new winScreen());
+            Greenfoot.setWorld(new levelSeven());
         }
 
         //Procedure to get a new word
