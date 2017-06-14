@@ -49,6 +49,8 @@ public class levelSix extends ZeeWeeld
                 correct = 0;
                 deathCount.setValue("Deaths: " + deaths);//Updates death count
                 character.setLocation(135,255);
+                addObject(door,735,390);  //Readds the door 
+                unlockDoor.getImage().setTransparency(255);//Readds the button
             }
         }
     }
@@ -65,6 +67,8 @@ public class levelSix extends ZeeWeeld
         }
         else if (correct == 4){
             character.setLocation(435,195);
+            unlockDoor.getImage().setTransparency(0);
+            removeObject(door);
         }
         else if (correct == 5){
             character.setLocation(585,225);

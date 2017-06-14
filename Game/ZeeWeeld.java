@@ -31,6 +31,11 @@ public class ZeeWeeld extends World
     static HashMap<Integer,String> levelColour = new HashMap<Integer,String>(); //HashMap used to set the colour of the blocks based on the level of the game
 
     static boolean trollingTrue = false;
+    static boolean gameWin = false;
+
+    static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.mp3");
+
+    returnMenu menuReturn = new returnMenu();
 
     /**
      * Constructor for objects of class ZeeWeeld.
@@ -41,6 +46,7 @@ public class ZeeWeeld extends World
         super(840, 600, 1, true);
         level = num;
         levelInitializer();
+
     }
     /**These 2D arrays map out the objects in the game. 
      * Values of 1 indicate that there is a hitbox in the spot in the world.
@@ -116,6 +122,8 @@ public class ZeeWeeld extends World
     }
 
     public void prepare(){
+        music.playLoop();   
+
         addObject(timeCount,135,135);
 
         //The up and down hitboxes
@@ -178,6 +186,8 @@ public class ZeeWeeld extends World
         addObject(new endPipe(),795,405);
         addObject(gameTime,700,550);
         addObject(deathCount,700,575);
+
+        addObject(menuReturn,40, 500);
 
         //Sets the inital time
         if(ZeeWeeld.time/60 < 10){ //Checks if time is less than 10 minutes

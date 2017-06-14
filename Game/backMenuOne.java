@@ -17,11 +17,12 @@ public class backMenuOne extends Actor
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new menu());
 
-            if (ZeeWeeld.level == 6){
+            if (ZeeWeeld.level == 6 && ZeeWeeld.gameWin){
                 ZeeWeeld.level = 0; 
                 ZeeWeeld.time = 0;
                 ZeeWeeld.deaths = 0;
                 ZeeWeeld.trollingTrue = false;
+                ZeeWeeld.gameWin = false;
             }
         }
     }    

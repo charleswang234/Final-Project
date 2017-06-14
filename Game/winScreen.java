@@ -20,5 +20,6 @@ public class winScreen extends World
     
     public void prepare(){
         addObject(new backMenuOne(),605,480);  
+        ZeeWeeld.gameWin = true; 
     }
 }
