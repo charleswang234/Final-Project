@@ -1,5 +1,9 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Tue Jun 13 20:22:08 EDT 2017
+=======
+#Tue Jun 13 20:12:13 EDT 2017
+>>>>>>> origin/master
 target24.type=ClassTarget
 class.leftSpike.image=spike 2.png
 target16.name=creditsButton
@@ -34,9 +38,15 @@ target17.typeParameters=
 dependency97.from=ZeeWeeld
 dependency20.from=levelFour
 dependency27.to=botSpike
+<<<<<<< HEAD
 dependency80.to=main
 dependency72.from=levelFive
 target6.name=Reader
+=======
+target6.name=Reader
+dependency80.to=main
+dependency72.from=levelFive
+>>>>>>> origin/master
 target31.height=50
 class.creditsButton.superclass=greenfoot.Actor
 target31.showInterface=false
@@ -97,9 +107,15 @@ dependency104.from=creditsButton
 dependency46.from=levelThree
 dependency98.from=ZeeWeeld
 dependency21.from=levelFour
+<<<<<<< HEAD
 dependency73.from=levelTwo
 target14.width=120
 target7.name=main
+=======
+target7.name=main
+dependency73.from=levelTwo
+target14.width=120
+>>>>>>> origin/master
 target2.width=80
 dependency11.to=Timer
 target14.height=50
@@ -134,10 +150,17 @@ dependency118.from=backMenuOne
 target20.name=levelFive
 target3.typeParameters=
 dependency35.from=main
+<<<<<<< HEAD
 class.levelTwo.image=blue background.jpg
 target35.height=50
 dependency87.to=levelThree
 target36.width=110
+=======
+target35.height=50
+class.levelTwo.image=blue background.jpg
+target36.width=110
+dependency87.to=levelThree
+>>>>>>> origin/master
 target8.height=50
 target31.typeParameters=
 dependency106.type=UsesDependency
@@ -168,12 +191,21 @@ dependency22.from=levelFour
 dependency35.to=deadMain
 target9.typeParameters=
 target27.height=50
+<<<<<<< HEAD
 dependency74.from=levelTwo
 target8.name=deathCount
 target27.width=80
 target7.y=70
 target30.height=50
 target7.x=70
+=======
+target8.name=deathCount
+dependency74.from=levelTwo
+target7.y=70
+target27.width=80
+target7.x=70
+target30.height=50
+>>>>>>> origin/master
 dependency108.to=howToPlayButton
 target3.height=50
 dependency29.to=topSpike
@@ -226,8 +258,13 @@ dependency48.from=levelThree
 dependency59.to=startPipe
 target33.typeParameters=
 dependency23.from=levelFour
+<<<<<<< HEAD
 dependency75.from=levelTwo
 target9.name=deadMain
+=======
+target9.name=deadMain
+dependency75.from=levelTwo
+>>>>>>> origin/master
 dependency50.from=levelThree
 target13.height=50
 dependency88.type=UsesDependency
@@ -254,6 +291,10 @@ dependency54.to=botSpike
 class.winScreen.superclass=greenfoot.World
 editor.fx.0.height=700
 target28.type=ClassTarget
+<<<<<<< HEAD
+=======
+dependency127.to=menu
+>>>>>>> origin/master
 dependency3.type=UsesDependency
 target13.showInterface=false
 dependency48.to=startPipe
@@ -267,9 +308,15 @@ dependency95.to=rightSpike
 target34.height=50
 target15.y=430
 target15.x=100
+<<<<<<< HEAD
 dependency2.from=main
 dependency108.type=UsesDependency
 target26.width=80
+=======
+target26.width=80
+dependency2.from=main
+dependency108.type=UsesDependency
+>>>>>>> origin/master
 target7.height=50
 dependency25.type=UsesDependency
 dependency77.type=UsesDependency
@@ -330,7 +377,11 @@ dependency32.to=startPipe
 target23.name=Queue
 dependency38.from=blueBlock
 dependency105.to=backMenuOne
+<<<<<<< HEAD
 simulation.speed=51
+=======
+simulation.speed=50
+>>>>>>> origin/master
 class.levelSix.image=cyan background.jpg
 dependency26.to=leftSpike
 target10.typeParameters=
@@ -341,11 +392,19 @@ dependency3.from=main
 dependency109.type=UsesDependency
 dependency26.type=UsesDependency
 class.continueButton.superclass=greenfoot.Actor
+<<<<<<< HEAD
 target21.y=130
 target33.showInterface=false
 dependency78.type=UsesDependency
 dependency111.type=UsesDependency
 target21.x=10
+=======
+target33.showInterface=false
+target21.y=130
+dependency78.type=UsesDependency
+target21.x=10
+dependency111.type=UsesDependency
+>>>>>>> origin/master
 class.menu.superclass=greenfoot.World
 dependency73.to=blueBlock
 dependency53.type=UsesDependency
@@ -353,8 +412,13 @@ target16.type=ClassTarget
 dependency9.to=Label
 dependency80.type=UsesDependency
 target35.name=blueBlock2
+<<<<<<< HEAD
 dependency108.from=menu
 target5.y=310
+=======
+target5.y=310
+dependency108.from=menu
+>>>>>>> origin/master
 target5.x=10
 dependency67.to=topSpike
 target10.name=blueBlock
@@ -397,8 +461,13 @@ dependency56.to=topSpike
 class.botSpike.superclass=greenfoot.Actor
 target24.name=startPipe
 dependency39.from=Timer
+<<<<<<< HEAD
 class.levelTwo.superclass=ZeeWeeld
 target21.width=80
+=======
+target21.width=80
+class.levelTwo.superclass=ZeeWeeld
+>>>>>>> origin/master
 class.Label.superclass=greenfoot.Actor
 dependency10.to=door
 dependency4.from=main
@@ -409,8 +478,13 @@ target6.height=50
 dependency27.type=UsesDependency
 dependency97.to=buttonPressed
 dependency79.type=UsesDependency
+<<<<<<< HEAD
 dependency112.type=UsesDependency
 target35.y=70
+=======
+target35.y=70
+dependency112.type=UsesDependency
+>>>>>>> origin/master
 target35.x=160
 dependency54.type=UsesDependency
 target17.type=ClassTarget
@@ -434,8 +508,13 @@ dependency14.type=UsesDependency
 dependency124.type=UsesDependency
 target1.height=50
 class.blueBlock.superclass=greenfoot.Actor
+<<<<<<< HEAD
 dependency66.type=UsesDependency
 target22.typeParameters=
+=======
+target22.typeParameters=
+dependency66.type=UsesDependency
+>>>>>>> origin/master
 dependency118.to=menu
 target27.showInterface=false
 target24.y=130
@@ -448,8 +527,13 @@ dependency92.to=blueBlock2
 target31.type=ClassTarget
 target4.typeParameters=
 class.door.superclass=greenfoot.Actor
+<<<<<<< HEAD
 target18.typeParameters=
 target8.y=490
+=======
+target8.y=490
+target18.typeParameters=
+>>>>>>> origin/master
 target8.x=100
 dependency86.to=levelTwo
 dependency13.from=levelFour
@@ -464,8 +548,13 @@ dependency6.type=UsesDependency
 target24.showInterface=false
 dependency40.to=blueBlock
 target13.y=430
+<<<<<<< HEAD
 target13.x=10
 target25.name=ZeeWeeld
+=======
+target25.name=ZeeWeeld
+target13.x=10
+>>>>>>> origin/master
 target20.typeParameters=
 class.levelOne.superclass=ZeeWeeld
 dependency113.to=levelFour
@@ -477,7 +566,10 @@ dependency107.to=continueButton
 dependency28.type=UsesDependency
 target16.typeParameters=
 class.Queue.superclass=
+<<<<<<< HEAD
 class.Words.superclass=greenfoot.Actor
+=======
+>>>>>>> origin/master
 dependency28.to=rightSpike
 dependency113.type=UsesDependency
 dependency81.to=startPipe
@@ -493,8 +585,13 @@ target20.type=ClassTarget
 target12.name=winScreen
 target26.typeParameters=
 dependency27.from=levelOne
+<<<<<<< HEAD
 dependency79.from=levelTwo
 target30.width=90
+=======
+target30.width=90
+dependency79.from=levelTwo
+>>>>>>> origin/master
 dependency112.from=continueButton
 dependency54.from=levelSix
 dependency69.to=main
@@ -532,6 +629,7 @@ target2.name=door
 dependency7.type=UsesDependency
 class.startPipe.superclass=greenfoot.Actor
 dependency64.to=leftSpike
+<<<<<<< HEAD
 class.ZeeWeeld.superclass=greenfoot.World
 target6.typeParameters=
 class.main2.image=elephants.png
@@ -539,6 +637,13 @@ class.main2.superclass=greenfoot.Actor
 class.levelSix.superclass=ZeeWeeld
 target26.name=troll
 target27.y=670
+=======
+target6.typeParameters=
+class.ZeeWeeld.superclass=greenfoot.World
+target27.y=670
+target26.name=troll
+class.levelSix.superclass=ZeeWeeld
+>>>>>>> origin/master
 target27.x=190
 target34.typeParameters=
 dependency58.to=main
@@ -554,8 +659,13 @@ dependency114.type=UsesDependency
 class.howToPlayButton.superclass=greenfoot.Actor
 target35.showInterface=false
 dependency12.to=doorUnlock
+<<<<<<< HEAD
 dependency56.type=UsesDependency
 target3.y=130
+=======
+target3.y=130
+dependency56.type=UsesDependency
+>>>>>>> origin/master
 target3.x=100
 target19.type=ClassTarget
 dependency31.type=UsesDependency
@@ -581,18 +691,32 @@ dependency82.from=levelTwo
 dependency16.type=UsesDependency
 dependency126.type=UsesDependency
 class.continueButton.image=Continue.png
+<<<<<<< HEAD
 dependency68.type=UsesDependency
 dependency126.to=ZeeWeeld
 target32.showInterface=false
+=======
+target32.showInterface=false
+dependency126.to=ZeeWeeld
+dependency68.type=UsesDependency
+>>>>>>> origin/master
 dependency101.type=UsesDependency
 class.menu.image=Menu.jpg
 dependency43.type=UsesDependency
 dependency47.to=main
+<<<<<<< HEAD
 dependency95.type=UsesDependency
 class.blueBlock.image=blue block.jpg
 target28.typeParameters=
 dependency70.type=UsesDependency
 class.MyWorld.superclass=ZeeWeeld
+=======
+class.blueBlock.image=blue block.jpg
+dependency95.type=UsesDependency
+target28.typeParameters=
+class.MyWorld.superclass=ZeeWeeld
+dependency70.type=UsesDependency
+>>>>>>> origin/master
 target15.showInterface=false
 readme.name=@README
 target33.type=ClassTarget
@@ -603,6 +727,7 @@ target9.type=ClassTarget
 dependency67.from=levelFive
 dependency100.from=ZeeWeeld
 dependency42.from=levelThree
+<<<<<<< HEAD
 target16.height=50
 readme.y=10
 readme.x=10
@@ -611,6 +736,16 @@ target9.showInterface=false
 dependency88.to=levelFour
 target29.width=80
 target3.name=doorUnlock
+=======
+readme.y=10
+target16.height=50
+target9.showInterface=false
+dependency94.from=ZeeWeeld
+readme.x=10
+dependency88.to=levelFour
+target3.name=doorUnlock
+target29.width=80
+>>>>>>> origin/master
 dependency8.type=UsesDependency
 class.levelFour.image=magenta background.jpg
 class.main.image=elephants.png
@@ -628,8 +763,13 @@ target6.showInterface=false
 dependency115.type=UsesDependency
 dependency57.type=UsesDependency
 target11.height=50
+<<<<<<< HEAD
 dependency32.type=UsesDependency
 target8.width=90
+=======
+target8.width=90
+dependency32.type=UsesDependency
+>>>>>>> origin/master
 dependency109.to=creditsButton
 dependency84.type=UsesDependency
 target36.typeParameters=
@@ -640,6 +780,7 @@ target14.name=whiteBackground
 dependency29.from=levelOne
 dependency114.from=continueButton
 dependency77.to=rightSpike
+<<<<<<< HEAD
 dependency56.from=levelSix
 target20.width=80
 dependency31.from=levelOne
@@ -649,12 +790,25 @@ target15.width=80
 dependency83.from=levelTwo
 dependency17.type=UsesDependency
 target3.showInterface=false
+=======
+target20.width=80
+dependency56.from=levelSix
+target22.y=10
+dependency31.from=levelOne
+target22.x=70
+dependency83.from=levelTwo
+target15.width=80
+target3.showInterface=false
+dependency17.type=UsesDependency
+dependency127.type=UsesDependency
+>>>>>>> origin/master
 dependency69.type=UsesDependency
 dependency102.type=UsesDependency
 class.levelFive.image=red background.jpg
 dependency110.to=levelOne
 dependency44.type=UsesDependency
 target29.showInterface=false
+<<<<<<< HEAD
 dependency96.type=UsesDependency
 target6.y=610
 dependency31.to=main
@@ -665,11 +819,24 @@ target34.type=ClassTarget
 dependency104.to=credits
 dependency25.to=blueBlock2
 dependency16.from=levelFour
+=======
+target6.y=610
+dependency96.type=UsesDependency
+target6.x=10
+dependency31.to=main
+package.numDependencies=127
+dependency71.type=UsesDependency
+target34.type=ClassTarget
+dependency104.to=credits
+dependency16.from=levelFour
+dependency25.to=blueBlock2
+>>>>>>> origin/master
 dependency126.from=troll
 target19.y=190
 target19.x=190
 dependency68.from=levelFive
 dependency101.from=ZeeWeeld
+<<<<<<< HEAD
 class.topSpike.superclass=greenfoot.Actor
 dependency43.from=levelThree
 target9.height=50
@@ -685,6 +852,23 @@ dependency9.type=UsesDependency
 editor.fx.0.y=0
 dependency8.to=ZeeWeeld
 editor.fx.0.x=0
+=======
+target9.height=50
+dependency43.from=levelThree
+class.topSpike.superclass=greenfoot.Actor
+dependency95.from=ZeeWeeld
+target32.height=50
+target11.y=370
+target4.name=newGame
+dependency70.from=levelFive
+target11.x=130
+dependency19.to=buttonPressed
+dependency9.type=UsesDependency
+dependency72.to=door
+editor.fx.0.y=0
+editor.fx.0.x=0
+dependency8.to=ZeeWeeld
+>>>>>>> origin/master
 target26.showInterface=false
 target28.name=continueButton
 dependency66.to=rightSpike
@@ -693,8 +877,13 @@ editor.swing.0.x=-8
 mainWindow.height=1060
 dependency8.from=main
 target28.height=50
+<<<<<<< HEAD
 dependency116.type=UsesDependency
 dependency20.to=main
+=======
+dependency20.to=main
+dependency116.type=UsesDependency
+>>>>>>> origin/master
 target4.height=50
 dependency58.type=UsesDependency
 dependency33.type=UsesDependency
@@ -708,8 +897,13 @@ dependency3.to=botSpike
 dependency115.from=continueButton
 dependency57.from=levelSix
 dependency61.to=door
+<<<<<<< HEAD
 dependency32.from=levelOne
 target33.width=80
+=======
+target33.width=80
+dependency32.from=levelOne
+>>>>>>> origin/master
 target36.y=370
 target36.x=10
 dependency84.from=deadMain
@@ -718,25 +912,42 @@ dependency18.type=UsesDependency
 target28.width=110
 dependency103.type=UsesDependency
 project.charset=UTF-8
+<<<<<<< HEAD
 dependency45.type=UsesDependency
 dependency55.to=rightSpike
 dependency20.type=UsesDependency
 dependency97.type=UsesDependency
+=======
+dependency55.to=rightSpike
+dependency45.type=UsesDependency
+dependency97.type=UsesDependency
+dependency20.type=UsesDependency
+>>>>>>> origin/master
 target20.showInterface=false
 dependency72.type=UsesDependency
 target35.type=ClassTarget
 target10.type=ClassTarget
 dependency49.to=endPipe
 dependency17.from=levelFour
+<<<<<<< HEAD
+=======
+dependency127.from=troll
+>>>>>>> origin/master
 dependency69.from=levelFive
 dependency102.from=newGame
 dependency44.from=levelThree
 dependency96.from=ZeeWeeld
 dependency96.to=topSpike
 target15.height=50
+<<<<<<< HEAD
 dependency71.from=levelFive
 target25.y=250
 target5.name=Label
+=======
+target5.name=Label
+target25.y=250
+dependency71.from=levelFive
+>>>>>>> origin/master
 target25.x=190
 target19.width=80
 target7.width=80
@@ -745,6 +956,7 @@ target13.typeParameters=
 target9.y=310
 target9.x=190
 dependency50.to=door
+<<<<<<< HEAD
 dependency9.from=ZeeWeeld
 target1.y=190
 dependency123.to=winScreen
@@ -757,6 +969,20 @@ dependency117.to=backMenuOne
 dependency34.type=UsesDependency
 target10.height=50
 target14.y=550
+=======
+target1.y=190
+dependency9.from=ZeeWeeld
+target1.x=10
+dependency123.to=winScreen
+dependency44.to=rightSpike
+dependency117.type=UsesDependency
+target3.width=90
+dependency59.type=UsesDependency
+dependency117.to=backMenuOne
+dependency34.type=UsesDependency
+target14.y=550
+target10.height=50
+>>>>>>> origin/master
 target14.x=110
 dependency38.to=ZeeWeeld
 dependency91.to=blueBlock
