@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class newGame here.
+ * Image allowed for mouse click to start a new game 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class newGame extends Actor
 {
@@ -14,11 +14,12 @@ public class newGame extends Actor
      */
     public void act() 
     {
+        //If clicked
         if (Greenfoot.mouseClicked(this)){
-            ZeeWeeld.deaths = 0;
-            ZeeWeeld.time = 0;
-            ZeeWeeld.trollingTrue = false;
-            Greenfoot.setWorld(new levelOne());
+            ZeeWeeld.deaths = 0; //Resets the number of deaths
+            ZeeWeeld.time = 0; //Resets the time played
+            ZeeWeeld.trollingTrue = false; //Resets the level 4 credits clicker 
+            Greenfoot.setWorld(new levelOne()); //changes the world to level one 
         }
     }    
 }

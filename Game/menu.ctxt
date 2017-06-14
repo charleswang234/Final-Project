@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=menu
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Menu\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Start\ screen\ for\ the\ game\ and\ screen\ used\ to\ access\ most\ of\ the\ other\ worlds.\ \r\n\ Allows\ player\ to\ go\ to\ the\ howToPlay\ and\ credits\ world.\ Also\ allows\ player\ to\ either\ continue\ their\ game\ or\ create\ a\ new\ game\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ June\ 2017\r\n
 comment1.params=
 comment1.target=menu()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n\ \r\n

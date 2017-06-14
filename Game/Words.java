@@ -7,7 +7,7 @@ import java.util.Random;
  * The words class is used to put words into a list and randomizes them.
  * 
  * @author Charles Wang and Victor Huang
- * @version April 12, 2017
+ * @version June 2017
  */
 public class Words extends Actor
 {

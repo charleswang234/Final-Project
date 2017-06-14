@@ -35,5 +35,5 @@ comment8.target=void\ doorCollision()
 comment8.text=\r\n\ Collision\ with\ the\ door,\ not\ allowing\ the\ character\ to\ reach\ its\ final\ destination\r\n
 comment9.params=
 comment9.target=void\ endPipeCollision()
-comment9.text=\r\n\ Collision\ with\ the\ end\ pipe,\ sets\ a\ new\ world\ if\ possible\r\n
+comment9.text=\r\n\ Collision\ with\ the\ end\ pipe,\ sets\ a\ new\ world\ if\ possible\r\n\ \r\n
 numComments=13

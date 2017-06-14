@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class backMenuOne here.
+ * Image allowed for mouse click to link to menu screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class backMenuOne extends Actor
 {
@@ -14,10 +14,10 @@ public class backMenuOne extends Actor
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new menu());
+        if (Greenfoot.mouseClicked(this)){ //if mouseclicked
+            Greenfoot.setWorld(new menu()); //sets it to the menu world
 
-            if (ZeeWeeld.level == 6 && ZeeWeeld.gameWin){
+            if (ZeeWeeld.level == 6 && ZeeWeeld.gameWin){ //resets the game if level 6 was reached and player has gone through the winScreen
                 ZeeWeeld.level = 0; 
                 ZeeWeeld.time = 0;
                 ZeeWeeld.deaths = 0;

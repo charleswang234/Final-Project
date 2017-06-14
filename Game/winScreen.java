@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class winScreen here.
+ * Screen that displays the the amount of time taken to finish the game and the number of deaths. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class winScreen extends World
 {
@@ -19,7 +19,7 @@ public class winScreen extends World
     }
     
     public void prepare(){
-        addObject(new backMenuOne(),605,480);  
-        ZeeWeeld.gameWin = true; 
+        addObject(new backMenuOne(),605,480); //allows access back to the menu world
+        ZeeWeeld.gameWin = true; //allows game to restart
     }
 }

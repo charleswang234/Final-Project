@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class troll here.
+ * Object needed to be clicked to pass level 5 for This is the Only Level Reboot
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class troll extends Actor
 {
@@ -14,10 +14,10 @@ public class troll extends Actor
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this)){
-            if (ZeeWeeld.level == 5){
-                ZeeWeeld.trollingTrue = true;
-                Greenfoot.setWorld(new menu());
+        if (Greenfoot.mouseClicked(this)){ //If object is mouse clicked
+            if (ZeeWeeld.level == 5){ //Only works if level is currently 5
+                ZeeWeeld.trollingTrue = true; //Allows the door to be removed
+                Greenfoot.setWorld(new menu()); //Returns player to menu screen to know that the button has worked
             }
         }
     }    

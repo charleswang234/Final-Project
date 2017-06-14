@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class returnMenu here.
+ * Image allowed for mouse click to link to menu screen while in game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class returnMenu extends Actor
 {
@@ -15,7 +15,7 @@ public class returnMenu extends Actor
     public void act() 
     {
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new menu());
+            Greenfoot.setWorld(new menu()); //Sets the world the the menu world
         }
     }    
 }

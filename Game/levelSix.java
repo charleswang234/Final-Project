@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class levelSix extends ZeeWeeld
 {
-    private int correct = 0;
+    private int correct = 0; //integer for counting the number of correct words typed
     /**
      * Constructor for objects of class levelSix.
      * 
@@ -28,8 +28,8 @@ public class levelSix extends ZeeWeeld
 
         //Runs the correct word method after typing in the full word
         if(word2.equals(word1)){
-            correct += 1;
-            correct();
+            correct += 1; //increases correct by one
+            correct(); //runs the correct mothod
         }
 
         //Code to check if the letter you typed in is the correct letter
@@ -45,16 +45,20 @@ public class levelSix extends ZeeWeeld
             else if (key.equals("left") || key.equals("right") || key.equals("up") || key.equals("down")){
             }
             else{
-                deaths += 1;
-                correct = 0;
+                deaths += 1; //Increases death by one if wrong letter typed
+                correct = 0; //Restarts the number of correct words
                 deathCount.setValue("Deaths: " + deaths);//Updates death count
-                character.setLocation(135,255);
+                character.setLocation(135,255); //Respawns the character at the start location of the screen
                 addObject(door,735,390);  //Readds the door 
-                unlockDoor.getImage().setTransparency(255);//Readds the button
+                unlockDoor.getImage().setTransparency(255);//Sets the button to opaque
             }
         }
     }
 
+    /**
+     * Moves the non-player controlled character across the screen. Depending on the number of consecutive words typed correctly without
+     * any mistakes, the character will be placed at specific locations, while slowly getting closer to the destination
+     */
     public void correct(){
         if (correct == 1){
             character.setLocation(195,165);
@@ -67,8 +71,8 @@ public class levelSix extends ZeeWeeld
         }
         else if (correct == 4){
             character.setLocation(435,195);
-            unlockDoor.getImage().setTransparency(0);
-            removeObject(door);
+            unlockDoor.getImage().setTransparency(0); //Sets the button to be transparent
+            removeObject(door); //Removes the door 
         }
         else if (correct == 5){
             character.setLocation(585,225);
@@ -82,12 +86,13 @@ public class levelSix extends ZeeWeeld
         else if (correct == 8){
             Greenfoot.setWorld(new winScreen());
         }
+        
         //Procedure to get a new word
         String oldWord = currentWord.getLabel();
         words.wordQueue.enqueue(oldWord); //Puts the word back into the queue
         currentWord.setValue(words.wordQueue.dequeue()); //Gets a new word
         playerInput.setValue(""); //Clears the user input
         deathCount.setValue("Deaths: " + deaths);//Updates death count
-        count = 0;
+        count = 0; //restarts the number of letters typed
     }
 }

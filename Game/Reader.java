@@ -5,7 +5,7 @@ import java.io.InputStream;
  * A reader to read through files.
  * 
  * @author Charles Wang and Victor Huang
- * @version June, 2017
+ * @version June 2017
  */
 
 public class Reader 

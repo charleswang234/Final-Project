@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class howToPlay here.
+ * Displays the instruction for This is the Only Level Reboot
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class howToPlay extends World
 {
@@ -19,6 +19,6 @@ public class howToPlay extends World
     }
     
     public void prepare(){
-        addObject(new backMenuOne(),420,470);
+        addObject(new backMenuOne(),420,470); //allows access back to the menu world
     }
 }

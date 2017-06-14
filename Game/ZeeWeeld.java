@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.HashMap;
+
 /**
  * Super Class of all of the levels for This is the Only Level Reboot
  * 
@@ -13,29 +14,29 @@ public class ZeeWeeld extends World
     static int deaths = 0; //Counts the number of deaths
 
     int count = 0; //Tracks the number of letters typed so far
-    Words words = new Words();
+    Words words = new Words(); //Creates a words class
     Label currentWord = new Label("",50);//The word to be typed
     Label playerInput = new Label("",50);//Displays what the player is typing
     String key; //Tracks last key pressed
     String word1; //Tracks value of currentWord
     String word2; //Tracks value of playerInput
 
-    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using label
-    Label deathCount = new Label("Deaths: " + deaths, 20); //Displays the amount of deaths onto the screen using labels
-    door door = new door(); //Creates an instance of door
-    doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of doorUnlock
-    whiteBackground backgroundWhite = new whiteBackground();
+    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Label for the amount of time played
+    Label deathCount = new Label("Deaths: " + deaths, 20); //Label for the amount of deaths
+    door door = new door(); //Creates an instance of the door class
+    doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of the doorUnlock class
+    whiteBackground backgroundWhite = new whiteBackground(); //Creates an instance of the whiteBackground class
     Timer timeCount = new Timer(); //Creates an instance of Timer
-    main2 character = new main2();
+    main2 character = new main2(); //Creates an instance of the main2 class needed for level 6
 
     static HashMap<Integer,String> levelColour = new HashMap<Integer,String>(); //HashMap used to set the colour of the blocks based on the level of the game
 
-    static boolean trollingTrue = false;
-    static boolean gameWin = false;
+    static boolean trollingTrue = false; //Boolean to check if trolling class is pressed, to pass level 5
+    static boolean gameWin = false; //Boolean to check if player won the game and was brought to the winScreen
 
-    static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.wav");
+    static GreenfootSound music = new GreenfootSound("Snare Bounce Polka.wav"); //Music for the game
 
-    returnMenu menuReturn = new returnMenu();
+    returnMenu menuReturn = new returnMenu(); //Creates an instance of the returnMenu class
 
     /**
      * Constructor for objects of class ZeeWeeld.
@@ -47,6 +48,7 @@ public class ZeeWeeld extends World
         level = num;
         levelInitializer();
     }
+    
     /**These 2D arrays map out the objects in the game. 
      * Values of 1 indicate that there is a hitbox in the spot in the world.
      * The world is laid out on a 28 * 16 grid.
@@ -87,7 +89,6 @@ public class ZeeWeeld extends World
             {0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,1},
             {0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1},
             {0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0},
-
         };
     int [][] spikeMap = {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -121,7 +122,7 @@ public class ZeeWeeld extends World
     }
 
     public void prepare(){        
-        addObject(timeCount,135,135);
+        addObject(timeCount,135,135); //sets the timer to be behind other objects so it is not seen
 
         //The up and down hitboxes
         for (int i = 0; i < upMap.length;i++){
@@ -159,32 +160,32 @@ public class ZeeWeeld extends World
             }
         }
 
-        addObject(new buttonPressed(),435,195);
-        addObject(unlockDoor,435,195);
-        addObject(door,735,390);
+        addObject(new buttonPressed(),435,195); //what the button looks like after it is pressed by the character
+        addObject(unlockDoor,435,195); //Unpressed button 
+        addObject(door,735,390); //Adds the door 
 
         if (level == 4){
-            addObject(backgroundWhite,420,240);
+            addObject(backgroundWhite,420,240); //Adds a white background if level 4
         }
 
         if(level == 6){
-            addObject(character,135,255);
-            addObject(words,135,135);
-            addObject(currentWord,420,90);
-            addObject(playerInput,420,270);
+            addObject(character,135,255); //Adds an unmovable character if level 6
+            addObject(words,135,135); //Adds words greenfoot image
+            addObject(currentWord,420,90); //Adds the current word onto the screen
+            addObject(playerInput,420,270); //Adds the player's input onto the screen
             words.randomWords(); //Queuing up all the words that the player will type
             currentWord.setValue(words.wordQueue.dequeue()); //Taking the first word from the queue
         }
         else{
-            addObject(new main(),135,155);
+            addObject(new main(),135,155); //Adds a movable character onto the screen for other levels
         }
+ 
+        addObject(new startPipe(),135,135); //Adds the start pipe onto the screen
+        addObject(new endPipe(),795,405); //Adds the end pipe onto the screen
+        addObject(gameTime,700,550); //Adds the game time onto the screen
+        addObject(deathCount,700,575); //Adds the death count onto the screen
 
-        addObject(new startPipe(),135,135);
-        addObject(new endPipe(),795,405);
-        addObject(gameTime,700,550);
-        addObject(deathCount,700,575);
-
-        addObject(menuReturn,40, 500);
+        addObject(menuReturn,40, 500); //Adds the return menu onto the screen
 
         //Sets the inital time
         if(ZeeWeeld.time/60 < 10){ //Checks if time is less than 10 minutes

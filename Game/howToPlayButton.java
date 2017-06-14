@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class howToPlayButton here.
+ * Image allowed for mouse click to link to howToPlay screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class howToPlayButton extends Actor
 {
@@ -14,8 +14,8 @@ public class howToPlayButton extends Actor
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new howToPlay());
+        if (Greenfoot.mouseClicked(this)){ //if mouseclicked
+            Greenfoot.setWorld(new howToPlay()); //sets it to the howToPlay world
         }
     }
 }

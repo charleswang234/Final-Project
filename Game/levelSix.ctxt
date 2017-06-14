@@ -8,4 +8,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ correct()
+comment3.text=\r\n\ Moves\ the\ non-player\ controlled\ character\ across\ the\ screen.\ Depending\ on\ the\ number\ of\ consecutive\ words\ typed\ correctly\ without\r\n\ any\ mistakes,\ the\ character\ will\ be\ placed\ at\ specific\ locations,\ while\ slowly\ getting\ closer\ to\ the\ destination\r\n
 numComments=4

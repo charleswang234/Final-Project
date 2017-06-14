@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class continueButton here.
+ * Allows player to continue the game if they have played before and did not finish the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version June 2017
  */
 public class continueButton extends Actor
 {
@@ -14,6 +14,7 @@ public class continueButton extends Actor
      */
     public void act() 
     {
+        //sets the level depending on the level last played
         if (Greenfoot.mouseClicked(this)){
             if(ZeeWeeld.level == 1){
                 Greenfoot.setWorld(new levelOne());

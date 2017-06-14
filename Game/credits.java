@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class credits here.
+ * World needed to complete level 5 for This is the Only Level Reboot. Also gives credit to significant people
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charples Wang and Victor Huang
+ * @version June 2017
  */
 public class credits extends World
 {
@@ -19,7 +19,7 @@ public class credits extends World
     }
     
     public void prepare(){
-        addObject(new backMenuOne(),630,460);
-        addObject(new troll(), 204,325);
+        addObject(new backMenuOne(),630,460); //allows access back to the menu world
+        addObject(new troll(), 204,325); //object needed to click to complete level 5
     }
 }
