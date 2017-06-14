@@ -11,19 +11,27 @@ public class ZeeWeeld extends World
     static int level = 0; //Level of the world
     static int time = 0; //Amount of time played
     static int deaths = 0; //Counts the number of deaths
-    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using label
 
+    int count = 0; //Tracks the number of letters typed so far
+    Words words = new Words();
+    Label currentWord = new Label("",50);//The word to be typed
+    Label playerInput = new Label("",50);//Displays what the player is typing
+    String key; //Tracks last key pressed
+    String word1; //Tracks value of currentWord
+    String word2; //Tracks value of playerInput
+
+    Label gameTime = new Label("Time: " + time/60 + ":" + time%60, 40); //Displays the amount of time played onto the screen using label
     Label deathCount = new Label("Deaths: " + deaths, 20); //Displays the amount of deaths onto the screen using labels
     door door = new door(); //Creates an instance of door
     doorUnlock unlockDoor = new doorUnlock(); //Creates an instance of doorUnlock
     whiteBackground backgroundWhite = new whiteBackground();
-
     Timer timeCount = new Timer(); //Creates an instance of Timer
+    main2 character = new main2();
 
     static HashMap<Integer,String> levelColour = new HashMap<Integer,String>(); //HashMap used to set the colour of the blocks based on the level of the game
 
     static boolean trollingTrue = false;
-    
+
     /**
      * Constructor for objects of class ZeeWeeld.
      * 
@@ -153,27 +161,38 @@ public class ZeeWeeld extends World
             addObject(backgroundWhite,420,240);
         }
 
-        addObject(new main(),135,155);
+        if(level == 6){
+            addObject(character,135,255);
+            addObject(words,135,135);
+            addObject(currentWord,400,50);
+            addObject(playerInput,400,250);
+            words.randomWords(); //Queuing up all the words that the player will type
+            currentWord.setValue(words.wordQueue.dequeue()); //Taking the first word from the queue
+        }
+        else{
+            addObject(new main(),135,155);
+        }
+        
         addObject(new startPipe(),135,135);
         addObject(new endPipe(),795,405);
         addObject(gameTime,700,550);
-        
+
         //Sets the inital time
         if(ZeeWeeld.time/60 < 10){ //Checks if time is less than 10 minutes
-                if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute
-                    gameTime.setValue("Time: 0" + ZeeWeeld.time/60 + ":0" + ZeeWeeld.time%60);
-                }
-                else{
-                    gameTime.setValue("Time: 0" + ZeeWeeld.time/60 + ":" + ZeeWeeld.time%60);
-                }
+            if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute
+                gameTime.setValue("Time: 0" + ZeeWeeld.time/60 + ":0" + ZeeWeeld.time%60);
             }
             else{
-                if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute
-                    gameTime.setValue("Time: " + ZeeWeeld.time/60 + ":0" + ZeeWeeld.time%60);
-                }
-                else{
-                    gameTime.setValue("Time: " + ZeeWeeld.time/60 + ":" + ZeeWeeld.time%60); 
-                }
+                gameTime.setValue("Time: 0" + ZeeWeeld.time/60 + ":" + ZeeWeeld.time%60);
             }
+        }
+        else{
+            if(ZeeWeeld.time%60 < 10){ //Checks if there are less than 10 seconds in the current minute
+                gameTime.setValue("Time: " + ZeeWeeld.time/60 + ":0" + ZeeWeeld.time%60);
+            }
+            else{
+                gameTime.setValue("Time: " + ZeeWeeld.time/60 + ":" + ZeeWeeld.time%60); 
+            }
+        }
     }
 }
